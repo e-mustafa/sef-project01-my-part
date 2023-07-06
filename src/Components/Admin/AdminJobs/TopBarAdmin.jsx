@@ -7,9 +7,9 @@ function TopBarAdmin() {
 	const [activeAdminSubLinkIndex, setActiveAdminSubLinkIndex] = useState(0);
 
 	return (
-		<div className=" text-capitalize d-block d-xl-none">
+		<div className="topbar-sm text-capitalize d-block d-xl-none mt-5">
 			<div className=" overflow-x-auto">
-				<ul className="ms-5 list-unstyled d-flex justify-content-center justify-content-sm-center align-items-center gap-3">
+				<ul className="list-unstyled d-flex justify-content-center justify-content-sm-center align-items-center gap-3">
 					{adminSideBarData &&
 						adminSideBarData?.map((section, i) => (
 							<li className="" key={i} onClick={() => setActiveAdminLinkIndex(i)}>

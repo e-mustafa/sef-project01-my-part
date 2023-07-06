@@ -31,7 +31,8 @@
 
 .admin-jobs.dropdown .dropdown-menu {
 	color: white;
-	background-color: rgb(116 115 115 / 50%);
+	/* background-color: rgb(116 115 115 / 50%); */
+	background-color: var(--dropdown-bg-list);
 }
 
 .admin-jobs.dropdown .dropdown-item {
@@ -40,6 +41,10 @@
 
 .admin-jobs.dropdown .dropdown-item:hover {
 	background-color: var(--primary-light-opacity);
+}
+
+.topbar-sm ul{
+	min-width: fit-content;
 }
 
 @media (max-width: 575px) {

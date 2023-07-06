@@ -18,6 +18,7 @@ import LinksPage from "./Pages/CreateCV/links";
 import CreateCVPage from "./Pages/CreateCV/CreateCVPage";
 
 import AdminPanelJobs from "./Pages/Admin/AdminJobs/admin-panel-jobs";
+import JobApplicationsListPage from "./Pages/Admin/AdminJobs/job-applications-list";
 
 function App() {
 	return (
@@ -41,9 +42,8 @@ function App() {
 					<Route path="/createcv/education" element={<EducationPage />} />
 					<Route path="/createcv/links" element={<LinksPage />} />
 
-
-
 					<Route path="/admin/jobs" element={<AdminPanelJobs />} />
+					<Route path="/admin/jobs/applications" element={<JobApplicationsListPage />} />
 				</Routes>
 			</div>
 		</>

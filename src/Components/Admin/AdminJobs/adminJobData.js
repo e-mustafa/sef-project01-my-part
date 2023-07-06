@@ -13,7 +13,7 @@ export const adminJobsListData = [
 		postedDay: "Monday",
 		postedDate: "June 5th",
 		postedTime: "12:30 PM",
-		applications: 20,
+		applications: 27,
 		field: "IT & Technology",
 	},
 	{
@@ -23,7 +23,7 @@ export const adminJobsListData = [
 		postedDay: "Monday",
 		postedDate: "June 5th",
 		postedTime: "12:30 PM",
-		applications: 20,
+		applications: 8,
 		field: "IT & Technology",
 	},
 	{
@@ -33,8 +33,39 @@ export const adminJobsListData = [
 		postedDay: "Monday",
 		postedDate: "June 5th",
 		postedTime: "12:30 PM",
-		applications: 20,
+		applications: 15,
 		field: "IT & Technology",
 	},
-];;
-;
+
+	{
+		company: "Here's the company name",
+		position: "Here's the position",
+		status: "close",
+		postedDay: "Monday",
+		postedDate: "June 5th",
+		postedTime: "12:30 PM",
+		applications: 32,
+		field: "IT & Technology",
+	},
+	{
+		company: "Here's the company name",
+		position: "Here's the position",
+		status: "close",
+		postedDay: "Monday",
+		postedDate: "June 5th",
+		postedTime: "12:30 PM",
+		applications: 6,
+		field: "IT & Technology",
+	},
+	{
+		company: "Here's the company name",
+		position: "Here's the position",
+		status: "close",
+		postedDay: "Monday",
+		postedDate: "June 5th",
+		postedTime: "12:30 PM",
+		applications: 3,
+		field: "IT & Technology",
+	},
+];
+

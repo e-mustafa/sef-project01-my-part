@@ -20,6 +20,8 @@
 
 	--light-color: #e5e5e5;
 
+	--dropdown-bg-list:rgb(116 115 115 / 90%);
+
 	/* --bs-gutter-x: 10rem; */
 }
 
@@ -300,7 +302,7 @@ a {
 .active-scale {
 	transition: 0.3s ease-in;
 	-webkit-transition: 0.3s ease-in;
-	
+
 	transform: scale(1);
 	-webkit-transform: scale(1);
 }
