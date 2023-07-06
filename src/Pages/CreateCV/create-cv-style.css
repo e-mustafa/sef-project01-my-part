@@ -1,0 +1,559 @@
+:root {
+	--primary: #bf9b30;
+	--primary-light: #e7bc3c;
+	--Green: #34a853;
+	--Red: #ea4335;
+	--Grey: #9d9d9d;
+	--Grey-light: #d0d0d0;
+	--gray-dark: #3a3939;
+	--Black: #1a1919;
+	--Disabled: #e1e1e1;
+	--BlackOpacity: rgb(0 0 0 / 40%);;
+	--gray-opacity:rgba(17, 17, 17, 0.5);
+	/* --DarkOpacity: rgba(26, 25, 25, 0.6); */
+	/* --BlackOpacity: rgba(19, 19, 19, 0.6); */
+	--blue-dark: #233a5f;
+	--white: #fff;
+	--border-width: 1.5px;
+
+	--light-color: #e5e5e5;
+
+	/* --bs-gutter-x: 10rem; */
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.btn-gray {
+	--bs-btn-color: #fff;
+	--bs-btn-bg: var(--Grey);
+	--bs-btn-border-color: var(--Grey);
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: var(--Disabled);
+	--bs-btn-hover-border-color: var(--Grey);
+	--bs-btn-focus-shadow-rgb: 49, 132, 253;
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: var(--Grey);
+	--bs-btn-active-border-color: var(--Grey);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: #fff;
+	--bs-btn-disabled-bg: var(--Disabled);
+	--bs-btn-disabled-border-color: var(--Disabled);
+}
+
+.btn-primary {
+	--bs-btn-color: #fff;
+	--bs-btn-bg: var(--primary);
+	--bs-btn-border-color: var(--primary);
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: var(--primary-light);
+	--bs-btn-hover-border-color: var(--primary);
+	--bs-btn-focus-shadow-rgb: 49, 132, 253;
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: var(--primary);
+	--bs-btn-active-border-color: var(--primary);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: #fff;
+	--bs-btn-disabled-bg: var(--Disabled);
+	--bs-btn-disabled-border-color: var(--Disabled);
+}
+.btn-outline-primary {
+	--bs-btn-color: #fff;
+	--bs-btn-border-color: var(--primary);
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: var(--primary);
+	--bs-btn-hover-border-color: var(--primary-light);
+	--bs-btn-focus-shadow-rgb: 13, 110, 253;
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: var(--primary);
+	--bs-btn-active-border-color: var(--primary);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-border-width: var(--border-width);
+	--bs-btn-disabled-color: var(--Disabled);
+	--bs-btn-disabled-bg: transparent;
+	--bs-btn-disabled-border-color: var(--Disabled);
+	--bs-gradient: none;
+}
+
+/* border indicator with transparent bg in hover -- also add --> btn  ------------------------- */
+.outline-indicator {
+	--bs-btn-color: #fff;
+	--bs-btn-border-color: var(--primary);
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: transparent;
+	--bs-btn-hover-border-color: var(--primary-light);
+	--bs-btn-focus-shadow-rgb: 13, 110, 253;
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: transparent;
+	--bs-btn-active-border-color: var(--primary);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-border-width: var(--border-width);
+	--bs-btn-disabled-color: var(--Disabled);
+	--bs-btn-disabled-bg: transparent;
+	--bs-btn-disabled-border-color: var(--Disabled);
+	--bs-gradient: none;
+}
+
+/* indicator with brown bg in hover -- also add --> btn btn-outline-primary ------------------------------ */
+.btn-indicator {
+	min-width: 55px;
+	min-height: 55px;
+	font-weight: 700;
+	line-height: 1;
+	font-size: 40px;
+}
+.step-button {
+	border: var(--border-width) solid var(--primary);
+	color: var(--white);
+	background-color: transparent;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	box-shadow: var(--bs-btn-box-shadow);
+}
+.step-button.active {
+	background-color: var(--primary);
+	box-shadow: var(--bs-btn-active-shadow);
+}
+
+/* text color and background ---------------------------------------------*/
+.text_primary {
+	color: var(--primary);
+}
+.text_gray {
+	color: var(--Grey);
+}
+.text_green {
+	color: var(--Green);
+}
+.text_red {
+	color: var(--Red);
+}
+.text_black {
+	color: var(--Black);
+}
+.text_blue {
+	color: var(--blue-dark);
+}
+
+.bg_primary {
+	background-color: var(--primary);
+}
+.bg_gray {
+	background-color: var(--Grey);
+}
+.bg_green {
+	background-color: var(--Green);
+}
+.bg_red {
+	background-color: var(--Red);
+}
+.bg_black {
+	background-color: var(--Black);
+}
+.bg_blue {
+	background-color: var(--blue-dark);
+}
+.bg_black-opc {
+	background-color: var(--BlackOpacity);
+}
+.bg_gray-opc {
+	background-color: var(--gray-opacity);
+}
+
+/* more font sizes ---------------------------------------- */
+
+.fs-22 {
+	font-size: 22px;
+}
+.fs-20 {
+	font-size: 20px;
+}
+.fs-18 {
+	font-size: 18px;
+}
+.fs-14 {
+	font-size: 14px;
+}
+.fs-13 {
+	font-size: 13px;
+}
+.fs-12 {
+	font-size: 12px;
+}
+
+.fs-11 {
+	font-size: 11px;
+}
+.fs-10 {
+	font-size: 10px;
+}
+
+.gap-5 {
+	gap: 1.75rem;
+}
+.gap-6 {
+	gap: 2rem;
+}
+.gap-7 {
+	gap: 2.5rem;
+}
+.gap-8 {
+	gap: 3rem;
+}
+
+.p-6 {
+	padding: 2rem !important;
+}
+.py-6 {
+	padding-top: 2rem !important;
+	padding-bottom: 2rem !important;
+}
+.px-6 {
+	padding-left: 2rem !important;
+	padding-right: 2rem !important;
+}
+
+.p-7 {
+	padding: 2.5rem !important;
+}
+.py-7 {
+	padding-top: 2.5rem !important;
+	padding-bottom: 2.5rem !important;
+}
+.px-7 {
+	padding-left: 2.5rem !important;
+	padding-right: 2.5rem !important;
+}
+
+.p-8 {
+	padding: 3.5rem !important;
+}
+.py-8 {
+	padding-top: 3.5rem !important;
+	padding-bottom: 3.5rem !important;
+}
+.px-8 {
+	padding-left: 3.5rem !important;
+	padding-right: 3.5rem !important;
+}
+
+/* ------------------------------------- container ---------------------------------- */
+
+@media (max-width: 991px) {
+	.container-fluid {
+		--bs-gutter-x: 3.5rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.container-fluid {
+		--bs-gutter-x: 10rem;
+	}
+}
+@media (max-width: 991px) {
+	.container-fluid-0 {
+		--bs-gutter-x: 0;
+		--bs-gutter-y: 0;
+		width: 100%;
+		padding-right: calc(var(--bs-gutter-x) * 0.5);
+		padding-left: calc(var(--bs-gutter-x) * 0.5);
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+@media (min-width: 992px) {
+	.container-fluid-0 {
+		--bs-gutter-x: 10rem;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.btn-width {
+	min-width: 160px;
+}
+
+.line_height-2{
+	line-height: 1.7
+}
+
+/* brown line under small page title ------------------- */
+.head-page-title{
+	position: relative;
+	display: inline-block;
+	padding-bottom: 8px;
+	border-bottom: 2px solid var(--primary);
+}
+/* .head-page-title::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 10px;
+	border-top: 2px solid var(--primary);
+	margin-top: 8px;
+} */
+
+.cv--avatar {
+	width: 110px;
+	height: 110px;
+	background: var(--Disabled);
+	object-fit: cover;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+/* ------------------------------------- section stepper ------------------------------------ */
+
+.stepper-container .step {
+	/* flex: 1 0 200px; */
+	flex: 1 0 230px;
+}
+/* .stepper-container {
+	width: 200px;
+	height: 100vw;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	transform-origin: top right;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+}
+
+.stepper-wrapper {
+	width: 100%;
+	height: 200p;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+} */
+
+/* -------------------------------- Create CV forms ----------------------------- */
+/* input ------------------------ */
+.create-cv label {
+	font-weight: 600;
+}
+.create-cv input,
+.create-cv textarea,
+.create-cv input:focus,
+.create-cv textarea:focus {
+	border: var(--border-width) solid var(--gray-dark);
+	outline: none;
+	background-color: var(--gray-dark) !important;
+	color: var(--white);
+	padding: 10px 15px;
+}
+
+.create-cv input:focus,
+.react-tel-input .form-control:focus,
+.create-cv textarea:focus {
+	border: var(--border-width) solid var(--primary);
+	color: var(--white);
+	box-shadow: none;
+}
+
+.create-cv textarea {
+	resize: none;
+}
+
+/* mobile-div -------------------------- */
+
+.mobile-data {
+	background-color: var(--gray-dark) !important;
+	border: var(--border-width) solid var(--gray-dark);
+	padding-left: 15px;
+
+	border-radius: 0.375rem;
+	-webkit-border-radius: 0.375rem;
+}
+.mobile-data:focus {
+	border: var(--border-width) solid var(--primary);
+}
+
+.mobile-data input,
+.mobile-data input:focus {
+	border: none;
+}
+
+/* -------------------------------------------------- */
+
+.circle-plus-icon {
+	border: 2px solid var(--primary);
+	border-radius: 50%;
+	padding: 4px 4px 3px 3px;
+	font-size: 12px;
+}
+.circle-plus-icon:focus {
+	color: var(--primary);
+}
+.circle-plus-icon:hover {
+	color: var(--primary-light);
+	border-color: var(--primary-light);
+}
+
+.click-primary:focus {
+	color: var(--primary);
+}
+.click-primary:hover {
+	color: var(--primary-light);
+	border-color: var(--primary-light);
+}
+
+.click-primary {
+	color: var(--primary);
+}
+.click-primary:focus {
+	color: var(--primary);
+}
+.click-primary:hover {
+	color: var(--primary-light);
+	border-color: var(--primary-light);
+}
+
+.cv-upload-img-container {
+	/* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='5' ry='5' stroke='%23333' stroke-width='2' stroke-dasharray='6' stroke-dashoffset='37' stroke-linecap='round'/%3e%3c/svg%3e"); */
+	border: 2px dashed var(--primary);
+	border-spacing: 5px;
+	border-radius: 5px;
+	border-radius: var(--bs-border-radius);
+	-webkit-border-radius: var(--bs-border-radius);
+	-moz-border-radius: var(--bs-border-radius);
+	-ms-border-radius: var(--bs-border-radius);
+	-o-border-radius: var(--bs-border-radius);
+}
+
+@media (max-width: 991px) {
+	.add-experience-container {
+		background-image: none;
+	}
+}
+
+@media (min-width: 992px) {
+	.add-experience-container {
+		border-radius: 5px;
+		/* border: 2px dashed var(--primary); */
+
+		background-image: repeating-linear-gradient(
+				-14deg,
+				#bf9b30,
+				#bf9b30 13px,
+				transparent 13px,
+				transparent 23px,
+				#bf9b30 23px
+			),
+			repeating-linear-gradient(
+				76deg,
+				#bf9b30,
+				#bf9b30 13px,
+				transparent 13px,
+				transparent 23px,
+				#bf9b30 23px
+			),
+			repeating-linear-gradient(
+				166deg,
+				#bf9b30,
+				#bf9b30 13px,
+				transparent 13px,
+				transparent 23px,
+				#bf9b30 23px
+			),
+			repeating-linear-gradient(
+				256deg,
+				#bf9b30,
+				#bf9b30 13px,
+				transparent 13px,
+				transparent 23px,
+				#bf9b30 23px
+			);
+		background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+		background-position: 0 0, 0 0, 100% 0, 0 100%;
+		background-repeat: no-repeat;
+
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		-ms-border-radius: 5px;
+		-o-border-radius: 5px;
+
+		/* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='7' ry='7' stroke='black' stroke-width='2' stroke-dasharray='14' stroke-dashoffset='6' stroke-linecap='round'/%3e%3c/svg%3e");
+		border-radius: 7px; */
+	}
+}
+
+/* -------------------------------- Create CV template ----------------------------- */
+
+/* cv-part-1 ----------------------- */
+.cv-part-1 {
+	min-width: 670px;
+	max-width: 100%;
+	aspect-ratio: 1/1.4142;
+	/* min-height: 1100px; */
+}
+.cv-squire-info {
+	background-color: var(--Disabled);
+	border-radius: 4px;
+	padding: 8px 8px;
+	overflow: hidden;
+}
+.cv-squire-info h6 {
+	color: var(--blue-dark);
+	margin: 0;
+	line-height: 1;
+}
+.cv-section-title::after {
+	content: "";
+	display: block;
+	width: 50px;
+	height: 2px;
+	background: var(--blue-dark);
+	margin-top: 8px;
+}
+
+/* cv-part-2 ------------------ */
+
+.education-details {
+	list-style: none;
+}
+.cv-li-dot {
+	position: relative;
+}
+.cv-li-dot::before {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	top: 5px;
+	left: -20px;
+	font-size: 50px;
+	background-color: var(--Grey);
+}

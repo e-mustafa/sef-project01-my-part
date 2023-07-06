@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+	background-image: url(./Images/secondary_background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+	background-color: #1a1a1a;
+	color: white;
+	font-family: "Open Sans", sans-serif;
+}
+
+/* #000000
+COPY
+#757575
+COPY
+#ffffff
+COPY
+#ff5252
+COPY
+#2196f3
+COPY
+#262626
+COPY
+#000000, opacity 0%
+COPY
+#757575, opacity 30.0% */
