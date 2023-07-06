@@ -3,17 +3,19 @@ import React from "react";
 function AdminJobSearchBar() {
 	return (
 		<>
-			<div className="d-flex justify-content-between mt-5">
+			<div className="d-none d-lg-flex justify-content-between mt-5">
 				<h5 className="head-page-title text-capitalize fs-5">Jobs</h5>
 
-				<div className="admin-job-search d-flex">
+				<div className="admin-job-search bg_gray2-opc rounded-pill d-flex align-items-center px-4">
 					<input
-						class="form-control rounded-pill"
+						className="form-control rounded-pill"
 						type="text"
-						placeholder="Default input"
-						aria-label="default input example"
+						placeholder="Search in Jobs"
+						aria-label="Search in Jobs"
 					/>
-					<i class="fa-solid fa-magnifying-glass"></i>
+					<div className="text_primary px-2">
+						<i className="fa-solid fa-magnifying-glass" />
+					</div>
 				</div>
 			</div>
 		</>

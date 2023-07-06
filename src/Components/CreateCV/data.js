@@ -37,9 +37,7 @@ export const websiteAvilableIconObject = [
 	{ name: "telegram", icon: "fa-telegram" },
 ];
 
-<i class="fa-solid fa-up-right-from-square"/>;
-
-
+<i className="fa-solid fa-up-right-from-square" />;
 
 let x = `Hani Husamuddin
 Frontend Developer

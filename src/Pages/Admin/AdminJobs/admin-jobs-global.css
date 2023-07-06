@@ -1,6 +1,7 @@
 :root {
 	--primary: #bf9b30;
 	--primary-light: #e7bc3c;
+	--primary-light-opacity: rgba(231, 188, 60, 0.5);
 	--Green: #34a853;
 	--Red: #ea4335;
 	--Grey: #9d9d9d;
@@ -8,8 +9,9 @@
 	--gray-dark: #3a3939;
 	--Black: #1a1919;
 	--Disabled: #e1e1e1;
-	--BlackOpacity: rgb(0 0 0 / 40%);;
-	--gray-opacity:rgba(17, 17, 17, 0.5);
+	--BlackOpacity: rgb(0 0 0 / 40%);
+	--gray-opacity2: rgba(225 225 225 / 40%);
+	--gray-opacity: rgba(17, 17, 17, 0.5);
 	/* --DarkOpacity: rgba(26, 25, 25, 0.6); */
 	/* --BlackOpacity: rgba(19, 19, 19, 0.6); */
 	--blue-dark: #233a5f;
@@ -167,6 +169,9 @@
 .bg_gray-opc {
 	background-color: var(--gray-opacity);
 }
+.bg_gray2-opc {
+	background-color: var(--gray-opacity2);
+}
 
 /* more font sizes ---------------------------------------- */
 
@@ -277,7 +282,7 @@
 
 a {
 	text-decoration: none;
-   color: inherit;
+	color: inherit;
 }
 
 .text-justify {
@@ -290,4 +295,16 @@ a {
 
 .btn-width {
 	min-width: 160px;
+}
+
+.active-scale {
+	transition: 0.3s ease-in;
+	-webkit-transition: 0.3s ease-in;
+	
+	transform: scale(1);
+	-webkit-transform: scale(1);
+}
+.active-scale:hover {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
 }

@@ -1,55 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { adminSideBarData } from "./adminJobData";
+import { Link } from "react-router-dom";
 
 function TopBarAdmin() {
+	const [activeAdminLinkIndex, setActiveAdminLinkIndex] = useState(2);
+	const [activeAdminSubLinkIndex, setActiveAdminSubLinkIndex] = useState(0);
+
 	return (
-		<div className="bg-black bg-opacity-25 rounded text-capitalize p-3 d-block d-xl-none">
-			{adminSideBarData &&
-				adminSideBarData.map((section, i) => (
-					<div key={i}>
-						<h5 className="bg-black bg-opacity-25 rounded fw-bold p-3">{section.title}</h5>
-
-						<div class="admin-jobs dropdown">
-							<div
-								class="btn btn-secondary opacity-50 dropdown-toggle d-flex justify-content-between align-items-center px-4 w-100"
-								href="/"
-								role="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								Dropdown link
-								
-							</div>
-
-							<ul class="dropdown-menu w-100 ">
-								<li>
-									<a class="dropdown-item" href="#">
-										Action
-									</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="#">
-										Another action
-									</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="#">
-										Something else here
-									</a>
-								</li>
-							</ul>
-						</div>
-						<ul className=" list-unstyled px-3 link-info line_height-2">
-							{section?.content.map((e, i) => (
-								<li key={i}>
-									<a href="/" className="text-light d-block fs-6">
-										{e}
-									</a>
-								</li>
-							))}
-						</ul>
-					</div>
-				))}
+		<div className=" text-capitalize d-block d-xl-none">
+			<div className=" overflow-x-auto">
+				<ul className="ms-5 list-unstyled d-flex justify-content-center justify-content-sm-center align-items-center gap-3">
+					{adminSideBarData &&
+						adminSideBarData?.map((section, i) => (
+							<li className="" key={i} onClick={() => setActiveAdminLinkIndex(i)}>
+								<Link
+									to="#"
+									className={`admin-topbar-link ${
+										activeAdminLinkIndex === i ? "topbar-active" : ""
+									} `}
+								>
+									<h5 className=" fw-bold p-3">{section.title}</h5>
+								</Link>
+							</li>
+						))}
+				</ul>
+			</div>
+			<div className="admin-jobs dropdown">
+				<div
+					className="dropdown-toggle bg_gray2-opc rounded shadow text-white d-flex justify-content-between align-items-center px-4 py-2 w-100"
+					role="button"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					{adminSideBarData[activeAdminLinkIndex]?.content[activeAdminSubLinkIndex]}
+				</div>
+				<ul className="dropdown-menu w-100">
+					{adminSideBarData[activeAdminLinkIndex]?.content?.map((sublink, i) => (
+						<li key={i} onClick={() => setActiveAdminSubLinkIndex(i)}>
+							<a className="dropdown-item" href="#">
+								{sublink}
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 }
