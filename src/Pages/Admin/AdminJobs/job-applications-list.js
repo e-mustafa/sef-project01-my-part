@@ -1,5 +1,5 @@
 import React from "react";
-import "./admin-jobs-global.css";
+import "../../../styles/ma-global-style.css";
 import "./job-application-liste.css";
 
 import AdminSectionTitle from "../../../Coponents/Admin/AdminJobs/AdminSectionTitle";

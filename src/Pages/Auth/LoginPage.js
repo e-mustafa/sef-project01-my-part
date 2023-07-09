@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../Admin/AdminJobs/admin-jobs-global.css";
+import "../../styles/ma-global-style.css";
 import "./login-page-style.css";
 import LoginModal from "../../Coponents/Auth/LoginModal";
 import LoginCard from "../../Coponents/Auth/LoginCard";

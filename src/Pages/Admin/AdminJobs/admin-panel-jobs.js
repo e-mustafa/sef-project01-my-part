@@ -1,6 +1,6 @@
 import React from "react";
 import "./admin-jobs-style.css";
-import "./admin-jobs-global.css";
+import "../../../styles/ma-global-style.css";
 import SideBarAdmin from "../../../Coponents/Admin/AdminJobs/SideBarAdmin";
 import JobListContainer from "../../../Coponents/Admin/AdminJobs/JobListContainer";
 import AdminJobSearchBar from "../../../Coponents/Admin/AdminJobs/AdminJobSearchbar";
