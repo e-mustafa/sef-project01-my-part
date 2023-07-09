@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { LiaTrashAlt } from "react-icons/lia";
 
 function Links8Form({ formData, handelChange, addItem, deleteItem }) {
 	console.log(formData);
@@ -43,20 +44,20 @@ function Links8Form({ formData, handelChange, addItem, deleteItem }) {
 								</div>
 							</div>
 							<div
-								className="clickable click-primary align-self-end mb-2 pe-5 pt-1"
+								className="clickable click-primary hover-scale align-self-end mb-2  pt-1 pe-5 pe-lg-0"
 								onClick={() => deleteItem(i)}
 							>
-								<i className="fa-regular fa-trash-can"></i>
+								<LiaTrashAlt size={26} />
 							</div>
 						</div>
 					))}
 				</div>
 				<div
-					className="clickable click-primary align-self-end mb-2 pe-2"
+					className="clickable click-primary hover-scale align-self-end mb-2 pe-2"
 					onClick={addItem}
-					style={{ marginTop: "-44px" }}
+					style={{ marginTop: "-48px" }}
 				>
-					<AiOutlinePlusCircle size="28" />
+					<AiOutlinePlusCircle size="26" />
 				</div>
 			</div>
 		</>

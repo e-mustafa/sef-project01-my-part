@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { LiaTrashAlt } from "react-icons/lia";
 
 function HonersAndAwards6Form({ formData, handelChange, addEducationInput, deleteEducation }) {
 	console.log(formData);
@@ -58,20 +59,23 @@ function HonersAndAwards6Form({ formData, handelChange, addEducationInput, delet
 						</div>
 
 						<div
-							className="clickable click-primary text-end pe-5 mb-4"
+							className="cv-del-add__icon text-end pe-5 mb-4"
+							data-bs-toggle="tooltip"
+							data-bs-title="Remove item"
 							onClick={() => deleteEducation()}
 						>
-							<i className="fa-regular fa-trash-can fa-xl" />
+							<LiaTrashAlt size={26} className="clickable click-primary hover-scale" />
 						</div>
 					</div>
 				))}
 			</div>
 			<div
-				className="align-self-end mb-2 pe-2 clickable click-primary text-end"
-				style={{ marginTop: "-48px" }}
+				className="circle-plus__icon mb-2 pe-2  text-end"
+				data-bs-toggle="tooltip"
+				data-bs-title="Add new item"
 				onClick={addEducationInput}
 			>
-				<AiOutlinePlusCircle size="28" />
+				<AiOutlinePlusCircle size={26} className="clickable click-primary hover-scale" />
 			</div>
 		</>
 	);

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import HeaderTitle from "../../Components/CreateCV/HeaderTitle";
-import CreateCVStipper from "../../Components/CreateCV/CreateCVStipper";
-import Skills3Form from "../../Components/CreateCV/Skills3Form";
-import CVTemplate from "../../Components/CreateCV/CVTemplate";
-import "./create-cv-style.css";
-import BackAndContinueBtns from "../../Components/CreateCV/BackAndContinueBtns";
+import HeaderTitle from "../../Coponents/Global/HeaderTitle";import CreateCVStipper from "../../Coponents/CreateCV/CreateCVStipper";
+import Skills3Form from "../../Coponents/CreateCV/Skills3Form";
+import CVTemplate from "../../Coponents/CreateCV/CVTemplate";
+import CustomizeYourCv from "../../Coponents/CreateCV/CustomizeYourCv";
 
 function SkillsPage() {
+	const navigate = useNavigate();
+
 	const [formData, setFormData] = useState({
 		skills: [
 			"HTML and CSS",
@@ -48,8 +48,9 @@ function SkillsPage() {
 		}));
 	}
 	return (
-		<div style={{ backgroundColor: "rgb(26 26 26 / .9)", color: "#fff" }}>
-			<HeaderTitle />
+		<div style={{ backgroundColor: "rgb(26 26 26 / .9)" }}>
+			<HeaderTitle title={"Create CV"} />
+			<CustomizeYourCv />
 			<CreateCVStipper />
 
 			<section className="container-fluid">
@@ -69,9 +70,17 @@ function SkillsPage() {
 						<CVTemplate data={formData} />
 					</div>
 				</div>
-
-				{/* back, continue, download buttons -- dynamic ------------------ */}
-				<BackAndContinueBtns />
+				<div className="d-flex flex-wrap flex-column flex-md-row p-2 gap-4 text-capitalize pb-5 ">
+					<button className="btn btn-gray btn-lg btn-width" onClick={() => navigate(-1)}>
+						Back
+					</button>
+					<button
+						className="btn btn-primary btn-lg btn-width"
+						onClick={() => navigate("/createcv/experience")}
+					>
+						Continue
+					</button>
+				</div>
 			</section>
 		</div>
 	);

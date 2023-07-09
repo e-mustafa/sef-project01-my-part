@@ -5,14 +5,17 @@ import { stepperData } from "./data";
 function BackAndContinueBtns() {
 	const navigate = useNavigate();
 	const location = useLocation();
-	const [nextLink, setNextLink] = useState("");
-	const [prevLink, setPrevLink] = useState("");
+
+	const [activeIndex, setActiveIndex] = useState(0);
+	const [nextLink, setNextLink] = useState(0);
+	const [prevLink, setPrevLink] = useState(0);
 	const [isLastIndex, setIsLastIndex] = useState(false);
 
 	// handel links for continue and back button ---------------------------
 	useEffect(() => {
 		const linkIndex = stepperData.findIndex((e) => location.pathname.includes(e.link));
 		const nextIndex = linkIndex < stepperData.length - 1 ? linkIndex + 1 : stepperData.length - 1;
+		setActiveIndex(linkIndex);
 		setNextLink(stepperData[nextIndex]?.link);
 		setPrevLink(stepperData[linkIndex > 0 ? linkIndex - 1 : 0]?.link);
 
@@ -27,6 +30,7 @@ function BackAndContinueBtns() {
 		>
 			<button
 				className="btn btn-gray btn-lg btn-width order-last order-lg-first"
+				disabled={activeIndex === 0}
 				// onClick={() => navigate(-1)}
 				onClick={() => navigate(`/createcv/${prevLink}`)}
 			>

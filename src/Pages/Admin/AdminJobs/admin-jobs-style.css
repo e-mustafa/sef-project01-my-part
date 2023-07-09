@@ -3,19 +3,27 @@
 	src: url("@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf") format("truetype");
 }
 
-.admin-job-search input {
+.admin-job-search input,
+.admin-job-search input:focus {
 	background-color: transparent;
 	color: white;
 	border: 0;
 	outline: 0;
-	
-}
-.admin-job-search input:focus{
 	box-shadow: none;
 }
-.admin-job-search input::placeholder{
-	color: rgb(215, 215, 215);
+.admin-job-search input::placeholder {
+	color: var(--placeholder);
 }
+
+.admin-job-search input:-webkit-autofill,
+.admin-job-search input:-webkit-autofill:hover,
+.admin-job-search input:-webkit-autofill:focus,
+.admin-job-search input:-webkit-autofill:active {
+	background-color: transparent !important;
+	-webkit-text-fill-color: var(--white);
+	-webkit-background-clip: text;
+}
+
 
 /* -------------------------------admin jobs top sidebar ------------------------ */
 
@@ -43,7 +51,7 @@
 	background-color: var(--primary-light-opacity);
 }
 
-.topbar-sm ul{
+.topbar-sm ul {
 	min-width: fit-content;
 }
 

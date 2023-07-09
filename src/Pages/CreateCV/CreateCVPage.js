@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import "./create-cv-style.css";
 import { useNavigate } from "react-router-dom";
-import HeaderTitle from "../../Components/CreateCV/HeaderTitle";
-import CreateCVStipper from "../../Components/CreateCV/CreateCVStipper";
-import MainInformation1Form from "../../Components/CreateCV/MainInformation1Form";
-import CVTemplate1 from "../../Components/CreateCV/CVTemplate1";
-import BackAndContinueBtns from "../../Components/CreateCV/BackAndContinueBtns";
+import HeaderTitle from "../../Coponents/Global/HeaderTitle";import CreateCVStipper from "../../Coponents/CreateCV/CreateCVStipper";
+import MainInformation1Form from "../../Coponents/CreateCV/MainInformation1Form";
+import CVTemplate1 from "../../Coponents/CreateCV/CVTemplate1";
+import CustomizeYourCv from "../../Coponents/CreateCV/CustomizeYourCv";
 
-
-
-function CreateCVPage() {
+export default function CreateCVPageMainIfo() {
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		main_information: {
@@ -43,7 +40,8 @@ function CreateCVPage() {
 
 	return (
 		<div style={{ backgroundColor: "rgb(26 26 26 / .8)" }}>
-			<HeaderTitle />
+			<HeaderTitle title={"Create CV"} />
+			<CustomizeYourCv />
 			<CreateCVStipper />
 			<section className="container-fluid">
 				<div className="row create-cv p-3 bg_black-opc my-4 mx-0 p-0 p-lg-4 rounded ">
@@ -60,7 +58,7 @@ function CreateCVPage() {
 						<CVTemplate1 data={formData.main_information} />
 					</div>
 				</div>
-				{/* <div className="d-flex flex-wrap flex-column flex-md-row p-2 gap-4 text-capitalize pb-5">
+				<div className="d-flex flex-wrap flex-column flex-md-row p-2 gap-4 text-capitalize pb-5">
 					<button className="btn btn-gray btn-lg btn-width" onClick={() => navigate(-1)}>
 						Back
 					</button>
@@ -70,12 +68,8 @@ function CreateCVPage() {
 					>
 						Continue
 					</button>
-				</div> */}
-
-				{/* back, continue, download buttons -- dynamic ------------------ */}
-				<BackAndContinueBtns />
+				</div>
 			</section>
 		</div>
 	);
 }
-export default CreateCVPage;

@@ -13,8 +13,8 @@ function AdminJobSearchBar() {
 						placeholder="Search in Jobs"
 						aria-label="Search in Jobs"
 					/>
-					<div className="text_primary px-2">
-						<i className="fa-solid fa-magnifying-glass" />
+					<div className="text_primary clickable active-scale px-2">
+						<i className="fa-solid fa-magnifying-glass fa-xl" />
 					</div>
 				</div>
 			</div>

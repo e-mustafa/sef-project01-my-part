@@ -8,8 +8,8 @@
 	--gray-dark: #3a3939;
 	--Black: #1a1919;
 	--Disabled: #e1e1e1;
-	--BlackOpacity: rgb(0 0 0 / 40%);;
-	--gray-opacity:rgba(17, 17, 17, 0.5);
+	--BlackOpacity: rgb(0 0 0 / 40%);
+	--gray-opacity: rgba(17, 17, 17, 0.5);
 	/* --DarkOpacity: rgba(26, 25, 25, 0.6); */
 	/* --BlackOpacity: rgba(19, 19, 19, 0.6); */
 	--blue-dark: #233a5f;
@@ -99,11 +99,11 @@
 
 /* indicator with brown bg in hover -- also add --> btn btn-outline-primary ------------------------------ */
 .btn-indicator {
-	min-width: 55px;
-	min-height: 55px;
+	min-width: 50px;
+	min-height: 50px;
 	font-weight: 700;
 	line-height: 1;
-	font-size: 40px;
+	font-size: 25px;
 }
 .step-button {
 	border: var(--border-width) solid var(--primary);
@@ -118,11 +118,19 @@
 	user-select: none;
 	box-shadow: var(--bs-btn-box-shadow);
 }
-.step-button.active {
-	background-color: var(--primary);
+.step-button:hover {
+	background-color: var(--primary-light);
 	box-shadow: var(--bs-btn-active-shadow);
 }
 
+.step-button.createcv-active {
+	background-color: var(--primary);
+	box-shadow: var(--bs-btn-active-shadow);
+}
+.createcv-active:hover {
+	background-color: var(--primary-light);
+	box-shadow: var(--bs-btn-active-shadow);
+}
 /* text color and background ---------------------------------------------*/
 .text_primary {
 	color: var(--primary);
@@ -245,6 +253,17 @@
 	padding-right: 3.5rem !important;
 }
 
+.hover-scale {
+	transition: 0.2s ease-out;
+	-webkit-transition: 0.2s ease-out;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+}
+.hover-scale:hover {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+}
+
 /* ------------------------------------- container ---------------------------------- */
 
 @media (max-width: 991px) {
@@ -291,25 +310,9 @@ a {
 	min-width: 160px;
 }
 
-.line_height-2{
-	line-height: 1.7
+.line_height-2 {
+	line-height: 1.7;
 }
-
-/* brown line under small page title ------------------- */
-.head-page-title{
-	position: relative;
-	display: inline-block;
-	padding-bottom: 8px;
-	border-bottom: 2px solid var(--primary);
-}
-/* .head-page-title::after {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 10px;
-	border-top: 2px solid var(--primary);
-	margin-top: 8px;
-} */
 
 .cv--avatar {
 	width: 110px;
@@ -323,38 +326,12 @@ a {
 	-o-border-radius: 50%;
 }
 /* ------------------------------------- section stepper ------------------------------------ */
+.stepper-container .swiper-slide {
+	width: 230px !important ;
+}
 
-.stepper-container .step {
-	/* flex: 1 0 200px; */
+/* .stepper-container .step {
 	flex: 1 0 230px;
-}
-/* .stepper-container {
-	width: 200px;
-	height: 100vw;
-
-	overflow-x: hidden;
-	overflow-y: auto;
-
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-	transform-origin: top right;
-	transform: rotate(-90deg);
-	-webkit-transform: rotate(-90deg);
-	-moz-transform: rotate(-90deg);
-	-ms-transform: rotate(-90deg);
-	-o-transform: rotate(-90deg);
-}
-
-.stepper-wrapper {
-	width: 100%;
-	height: 200p;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-	transform: rotate(90deg);
-	-webkit-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
 } */
 
 /* -------------------------------- Create CV forms ----------------------------- */
@@ -379,6 +356,15 @@ a {
 	border: var(--border-width) solid var(--primary);
 	color: var(--white);
 	box-shadow: none;
+}
+
+.create-cv input:-webkit-autofill,
+.create-cv input:-webkit-autofill:hover,
+.create-cv input:-webkit-autofill:focus,
+.create-cv input:-webkit-autofill:active {
+	background-color: var(--gray-dark) !important;
+	-webkit-text-fill-color: var(--white);
+	-webkit-background-clip: text;
 }
 
 .create-cv textarea {
@@ -406,22 +392,32 @@ a {
 
 /* -------------------------------------------------- */
 
-.circle-plus-icon {
-	border: 2px solid var(--primary);
-	border-radius: 50%;
-	padding: 4px 4px 3px 3px;
-	font-size: 12px;
+.circle-plus__icon {
+	margin-top: -48px;
 }
-.circle-plus-icon:focus {
+.cv-del-add__icon svg {
+	font-size: 26px;
+}
+.cv-del-add__icon i {
+	font-size: 23px;
+}
+.cv-del-add__icon {
+	cursor: pointer;
 	color: var(--primary);
 }
-.circle-plus-icon:hover {
+.cv-del-add__icon:hover {
 	color: var(--primary-light);
-	border-color: var(--primary-light);
+}
+.cv-del-add__icon:hover svg {
+	font-size: 28px;
+}
+.cv-del-add__icon:hover i {
+	font-size: 24px;
 }
 
 .click-primary:focus {
 	color: var(--primary);
+	box-shadow: var(--bs-btn-active-shadow);
 }
 .click-primary:hover {
 	color: var(--primary-light);
@@ -440,15 +436,11 @@ a {
 }
 
 .cv-upload-img-container {
-	/* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='5' ry='5' stroke='%23333' stroke-width='2' stroke-dasharray='6' stroke-dashoffset='37' stroke-linecap='round'/%3e%3c/svg%3e"); */
 	border: 2px dashed var(--primary);
 	border-spacing: 5px;
 	border-radius: 5px;
 	border-radius: var(--bs-border-radius);
 	-webkit-border-radius: var(--bs-border-radius);
-	-moz-border-radius: var(--bs-border-radius);
-	-ms-border-radius: var(--bs-border-radius);
-	-o-border-radius: var(--bs-border-radius);
 }
 
 @media (max-width: 991px) {
@@ -460,8 +452,7 @@ a {
 @media (min-width: 992px) {
 	.add-experience-container {
 		border-radius: 5px;
-		/* border: 2px dashed var(--primary); */
-
+		-webkit-border-radius: 5px;
 		background-image: repeating-linear-gradient(
 				-14deg,
 				#bf9b30,
@@ -497,14 +488,6 @@ a {
 		background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
 		background-position: 0 0, 0 0, 100% 0, 0 100%;
 		background-repeat: no-repeat;
-
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		-ms-border-radius: 5px;
-		-o-border-radius: 5px;
-
-		/* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='7' ry='7' stroke='black' stroke-width='2' stroke-dasharray='14' stroke-dashoffset='6' stroke-linecap='round'/%3e%3c/svg%3e");
-		border-radius: 7px; */
 	}
 }
 

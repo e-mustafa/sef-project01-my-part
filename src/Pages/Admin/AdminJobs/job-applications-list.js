@@ -2,12 +2,12 @@ import React from "react";
 import "./admin-jobs-global.css";
 import "./job-application-liste.css";
 
-import AdminSectionTitle from "../../../Components/Admin/AdminJobs/AdminSectionTitle";
-import JobApplicationsContainerLg from "../../../Components/Admin/AdminJobs/JobApplicationsContainerLg";
-import JobApplicationsContainer from "../../../Components/Admin/AdminJobs/JobApplicationsContainer";
-import JobApplicationPagination from "../../../Components/Admin/AdminJobs/JobApplicationPagination";
-import SideBarAdminShrok from "../../../Components/Admin/AdminJobs/SideBarAdminShrok";
-import HeaderTitleShrok from "../../../Components/Admin/AdminJobs/HeaderTitleShrok";
+import AdminSectionTitle from "../../../Coponents/Admin/AdminJobs/AdminSectionTitle";
+import JobApplicationsContainerLg from "../../../Coponents/Admin/AdminJobs/JobApplicationsContainerLg";
+import JobApplicationsContainer from "../../../Coponents/Admin/AdminJobs/JobApplicationsContainer";
+import JobApplicationPagination from "../../../Coponents/Admin/AdminJobs/JobApplicationPagination";
+import SideBarAdminShrok from "../../../Coponents/Admin/AdminJobs/SideBarAdminShrok";
+import HeaderTitleShrok from "../../../Coponents/Admin/AdminJobs/HeaderTitleShrok";
 
 function JobApplicationsListPage() {
 	return (

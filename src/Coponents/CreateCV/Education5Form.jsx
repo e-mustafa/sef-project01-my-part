@@ -1,19 +1,15 @@
 import React from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-
+import { LiaTrashAlt } from "react-icons/lia";
 
 function Education5Form({ formData, handelChange, addEducationInput, deleteEducation }) {
-	console.log(formData);
 	return (
 		<>
 			<h5 className="mb-4 mb-lg-5">Education</h5>
 			<div className="d-flex flex-column gap-3 w-100">
 				{formData?.map((ele, i) => (
-					<div>
-						<div
-							className="add-experience-container row row-gap-3 g-2 align-items-center mx-0 mx-lg-2 px-0 px-lg-3 py-4 mb-3"
-							key={i}
-						>
+					<div key={i}>
+						<div className="add-experience-container row row-gap-3 g-2 align-items-center mx-0 mx-lg-2 px-0 px-lg-3 py-4 mb-3">
 							<div className="col-12">
 								<label
 									htmlFor="inputOrganizationName"
@@ -90,20 +86,23 @@ function Education5Form({ formData, handelChange, addEducationInput, deleteEduca
 						</div>
 
 						<div
-							className="clickable click-primary text-end pe-5 mb-4"
+							className=" text-end pe-5 mb-4"
+							data-bs-toggle="tooltip"
+							data-bs-title="Remove item"
 							onClick={() => deleteEducation()}
 						>
-							<i className="fa-regular fa-trash-can fa-xl" />
+							<LiaTrashAlt size={26} className="clickable click-primary hover-scale" />
 						</div>
 					</div>
 				))}
 			</div>
 			<div
-				className="align-self-end mb-2 pe-2 clickable click-primary text-end"
-				style={{ marginTop: "-48px" }}
+				className="circle-plus__icon mb-2 pe-2  text-end"
+				data-bs-toggle="tooltip"
+				data-bs-title="Add new item"
 				onClick={addEducationInput}
 			>
-				<AiOutlinePlusCircle size="28" />
+				<AiOutlinePlusCircle size={26} className="clickable click-primary hover-scale" />
 			</div>
 		</>
 	);

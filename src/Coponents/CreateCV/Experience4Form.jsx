@@ -2,6 +2,7 @@ import React from "react";
 
 import DragDropImgSmall from "./DragDropImgSmall";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { LiaTrashAlt } from "react-icons/lia";
 
 function Experience4Form({ formData, handelChange, addExperienceInput, deleteExperience }) {
 	console.log(formData);
@@ -68,43 +69,49 @@ function Experience4Form({ formData, handelChange, addExperienceInput, deleteExp
 									onChange={(e) => handelChange(e, i)}
 								/>
 							</div>
+							<div className="col-12 ">
+								<div className="row g-3">
+									<div className="col-12 col-lg-4 order-last order-lg-0 h-100">
+										<DragDropImgSmall />
+									</div>
 
-							<div className="col-12 col-lg-4 order-last order-lg-0 h-100">
-								<DragDropImgSmall />
-							</div>
-
-							<div className="col-12 col-lg-8 h-100">
-								<label htmlFor="inputDescription" className="form-label">
-									Description
-								</label>
-								<textarea
-									className="form-control"
-									id="inputDescription"
-									name="description"
-									rows="5"
-									value={ele?.description ?? ""}
-									onChange={(e) => handelChange(e, i)}
-									autoFocus
-								></textarea>
+									<div className="col-12 col-lg-8 h-100">
+										<label htmlFor="inputDescription" className="form-label">
+											Description
+										</label>
+										<textarea
+											className="form-control"
+											id="inputDescription"
+											name="description"
+											rows="5"
+											value={ele?.description ?? ""}
+											onChange={(e) => handelChange(e, i)}
+											autoFocus
+										></textarea>
+									</div>
+								</div>
 							</div>
 						</div>
 
 						<div
-							className="clickable click-primary text-end pe-5 mb-4"
+							className=" text-end pe-5 mb-4"
+							data-bs-toggle="tooltip"
+							data-bs-title="Remove item"
 							onClick={() => deleteExperience()}
 						>
-							<i className="fa-regular fa-trash-can fa-xl" />
+							<LiaTrashAlt size={26} className="clickable click-primary hover-scale" />
 						</div>
 					</div>
 				))}
 			</div>
 
 			<div
-				className="align-self-end mb-2 pe-2 clickable click-primary text-end"
-				style={{ marginTop: "-48px" }}
+				className="circle-plus__icon  mb-2 pe-2  text-end"
+				data-bs-toggle="tooltip"
+				data-bs-title="Add new item"
 				onClick={addExperienceInput}
 			>
-				<AiOutlinePlusCircle size="28" />
+				<AiOutlinePlusCircle size={26} className="clickable click-primary hover-scale" />
 			</div>
 		</>
 	);

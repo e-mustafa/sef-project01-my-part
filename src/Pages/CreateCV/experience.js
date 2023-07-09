@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-
-import "./create-cv-style.css";
-import BackAndContinueBtns from "../../Components/CreateCV/BackAndContinueBtns";
-import HeaderTitle from "../../Components/CreateCV/HeaderTitle";
-import CreateCVStipper from "../../Components/CreateCV/CreateCVStipper";
-import Experience4Form from "../../Components/CreateCV/Experience4Form";
-import CVTemplate from "../../Components/CreateCV/CVTemplate";
+import { useNavigate } from "react-router-dom";
+import HeaderTitle from "../../Coponents/Global/HeaderTitle";import CreateCVStipper from "../../Coponents/CreateCV/CreateCVStipper";
+import Experience4Form from "../../Coponents/CreateCV/Experience4Form";
+import CVTemplate from "../../Coponents/CreateCV/CVTemplate";
+import CustomizeYourCv from "../../Coponents/CreateCV/CustomizeYourCv";
 
 function ExperiencePage() {
+	const navigate = useNavigate();
 
 	const [formData, setFormData] = useState({
 		experience: [
@@ -61,13 +60,14 @@ function ExperiencePage() {
 		}));
 	}
 	return (
-		<div style={{ backgroundColor: "rgb(26 26 26 / .9)", color: "#fff" }}>
-			<HeaderTitle />
+		<div style={{ backgroundColor: "rgb(26 26 26 / .9)" }}>
+			<HeaderTitle title={"Create CV"} />
+			<CustomizeYourCv />
 			<CreateCVStipper />
 
 			<section className="container-fluid">
 				<div className="row create-cv p-3 bg_black-opc my-4 mx-0 p-0 p-lg-4 rounded ">
-					<div className="col-12 col-lg-6 p-0 px-lg-2 ">
+					<div className="col-12 col-lg-6 p-0 px-lg-2">
 						{/* form part ---------------------------------------------- */}
 						<Experience4Form
 							formData={formData.experience}
@@ -81,9 +81,17 @@ function ExperiencePage() {
 						<CVTemplate data={formData} />
 					</div>
 				</div>
-
-				{/* back, continue, download buttons -- dynamic ------------------ */}
-				<BackAndContinueBtns />
+				<div className="d-flex flex-wrap flex-column flex-md-row p-2 gap-4 text-capitalize pb-5">
+					<button className="btn btn-gray btn-lg btn-width" onClick={() => navigate(-1)}>
+						Back
+					</button>
+					<button
+						className="btn btn-primary btn-lg btn-width"
+						onClick={() => navigate("/createcv/education")}
+					>
+						Continue
+					</button>
+				</div>
 			</section>
 		</div>
 	);

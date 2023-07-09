@@ -1,0 +1,65 @@
+.loginModal .modal-dialog {
+	max-width: 600px;
+}
+
+.modal-backdrop {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+	background: rgb(107 106 106 / 22%);
+	/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+	backdrop-filter: blur(1.5px);
+	-webkit-backdrop-filter: blur(1.5px);
+}
+
+.login-container {
+	max-width: 450px;
+}
+.login_logo {
+	margin-top: -80px;
+}
+
+.btn-close:focus,
+.btn-close:hover,
+.btn-close:active {
+	box-shadow: none;
+	color: var(--primary);
+}
+.btn-close:hover{
+   color: var(--primary-light);
+}
+
+/* ------------------------------- Login__card ----------------------------------------- */
+.Login__card {
+	min-width: 100%;
+	max-width: 460px;
+}
+
+/* ----------------------- login-inputs ------------------------- */
+
+.login-inputs {
+	border: var(--border-width) solid var(--gray-dark);
+	background-color: var(--gray-dark);
+}
+.login-inputs input::placeholder {
+	color: var(--placeholder);
+}
+.login-inputs input,
+.login-inputs input:focus {
+	outline: none;
+	border: none;
+	background-color: transparent !important;
+	color: var(--white);
+	padding: 10px 15px;
+	box-shadow: none;
+}
+
+.login-inputs input:-webkit-autofill,
+.login-inputs input:-webkit-autofill:hover,
+.login-inputs input:-webkit-autofill:focus,
+.login-inputs input:-webkit-autofill:active {
+	background-color: transparent !important;
+	-webkit-text-fill-color: var(--white);
+	-webkit-background-clip: text;
+}
