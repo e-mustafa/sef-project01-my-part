@@ -12,6 +12,7 @@ function LoginModal() {
 			>
 				Launch demo modal
 			</button>
+			
 
 			<div
 				className="loginModal modal fade"

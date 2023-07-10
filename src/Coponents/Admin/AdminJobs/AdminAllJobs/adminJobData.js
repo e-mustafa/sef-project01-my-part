@@ -69,3 +69,29 @@ export const adminJobsListData = [
 	},
 ];
 
+export const adminJobsApplicationsData = [
+	{
+		applicant: "Here's the company name",
+		experience: "2 Years",
+		email: "user@gmail.com",
+		phone: "002011289304",
+	},
+	{
+		applicant: "Here's the company name",
+		experience: "5 Years",
+		email: "user@gmail.com",
+		phone: "002011289304",
+	},
+	{
+		applicant: "Here's the company name",
+		experience: "3 Years",
+		email: "user@gmail.com",
+		phone: "002011289304",
+	},
+	{
+		applicant: "Here's the company name",
+		experience: "7 Years",
+		email: "user@gmail.com",
+		phone: "002011289304",
+	},
+];

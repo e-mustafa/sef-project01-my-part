@@ -1,25 +1,11 @@
-import React, { useState } from "react";
-import { adminJobsListData } from "./adminJobData";
+import React from "react";
 import { LiaTrashAlt } from "react-icons/lia";
 
-function JobListContainerLg() {
-	const [jobsStat, setJobsStat] = useState(adminJobsListData);
-
-	const handelDeleteJob = (index) => {
-		setJobsStat(jobsStat?.filter((e, i) => i !== index));
-	};
+function JobListCardsLg({ jobsState, handelDeleteJob }) {
 	return (
-		<div className="d-none d-lg-flex flex-column gap-4 mt-5 text-capitalize">
-			<div className="row align-items-center fw-bold px-4">
-				<div className="col-6 col-lg-3">Company</div>
-				<div className="col-6 col-lg-3">Position</div>
-				<div className="col-6 col-lg-2">Status</div>
-				<div className="col-6 col-lg-2">Posted At</div>
-				<div className="col-6 col-lg-2"># Applications</div>
-				<div className="col-6 col-lg-1"></div>
-			</div>
-			{jobsStat &&
-				jobsStat.map((job, i) => (
+		<>
+			{jobsState &&
+				jobsState.map((job, i) => (
 					<div key={i} className="row bg-black bg-opacity-25 align-items-center rounded p-4">
 						<div className="col-6 col-lg-3">
 							<h6 className="mb-0">{job?.company}</h6>
@@ -53,8 +39,8 @@ function JobListContainerLg() {
 						</div>
 					</div>
 				))}
-		</div>
+		</>
 	);
 }
 
-export default JobListContainerLg;
+export default JobListCardsLg;

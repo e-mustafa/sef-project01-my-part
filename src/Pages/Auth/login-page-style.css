@@ -1,3 +1,9 @@
+.Login__card {
+	animation: login-zoom-in 1s ease-out forwards;
+	-webkit-animation: login-zoom-in 1s ease-out forwards;
+	transform: scale(0);
+	-webkit-transform: scale(0);
+}
 .loginModal .modal-dialog {
 	max-width: 600px;
 }
@@ -26,8 +32,8 @@
 	box-shadow: none;
 	color: var(--primary);
 }
-.btn-close:hover{
-   color: var(--primary-light);
+.btn-close:hover {
+	color: var(--primary-light);
 }
 
 /* ------------------------------- Login__card ----------------------------------------- */
@@ -39,8 +45,8 @@
 /* ----------------------- login-inputs ------------------------- */
 
 .login-inputs {
-	border: var(--border-width) solid var(--gray-dark);
 	background-color: var(--gray-dark);
+	position: relative;
 }
 .login-inputs input::placeholder {
 	color: var(--placeholder);
@@ -48,11 +54,16 @@
 .login-inputs input,
 .login-inputs input:focus {
 	outline: none;
-	border: none;
+	border: var(--border-width) solid var(--gray-dark);
 	background-color: var(--gray-dark) !important;
 	color: var(--white);
-	padding: 10px 15px;
+	padding: 15px 15px;
 	box-shadow: none;
+}
+.login-inputs input:focus,
+.login-inputs input:active {
+	border-color: var(--primary);
+	/* box-shadow: 0px 0px 3px 1px #f9c731; */
 }
 
 .login-inputs input:-webkit-autofill,
@@ -62,4 +73,24 @@
 	background-color: var(--gray-dark) !important;
 	-webkit-text-fill-color: var(--white);
 	-webkit-background-clip: text;
+	caret-color: white;
+}
+
+.login-inputs .login_left-icon {
+	position: absolute;
+	top: 25px;
+	left: 15px;
+}
+
+.login-inputs .login_right-icon {
+	position: absolute;
+	top: 13px;
+	right: 15px;
+}
+
+@keyframes login-zoom-in {
+	100% {
+		transform: scale(1);
+		-webkit-transform: scale(1);
+	}
 }

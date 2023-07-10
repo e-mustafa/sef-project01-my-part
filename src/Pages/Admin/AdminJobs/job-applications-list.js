@@ -2,12 +2,17 @@ import React from "react";
 import "../../../styles/ma-global-style.css";
 import "./job-application-liste.css";
 
-import AdminSectionTitle from "../../../Coponents/Admin/AdminJobs/AdminSectionTitle";
-import JobApplicationsContainerLg from "../../../Coponents/Admin/AdminJobs/JobApplicationsContainerLg";
-import JobApplicationsContainer from "../../../Coponents/Admin/AdminJobs/JobApplicationsContainer";
-import JobApplicationPagination from "../../../Coponents/Admin/AdminJobs/JobApplicationPagination";
-import SideBarAdminShrok from "../../../Coponents/Admin/AdminJobs/SideBarAdminShrok";
-import HeaderTitleShrok from "../../../Coponents/Admin/AdminJobs/HeaderTitleShrok";
+import AdminSectionTitle from "../../../Coponents/Admin/AdminJobs/AdminAllJobs/AdminSectionTitle";
+import JobApplicationsContainerLg from "../../../Coponents/Admin/AdminJobs/AdminAllJobs/JobApplicationsContainerLg";
+// import JobApplicationsContainer from "../../../Coponents/Admin/AdminJobs/AdminAllJobs/JobApplicationsContainer";
+import JobApplicationPagination from "../../../Coponents/Admin/AdminJobs/AdminAllJobs/JobApplicationPagination";
+import SideBarAdminShrok from "../../../Coponents/Admin/AdminJobs/AdminAllJobs/SideBarAdminShrok";
+import HeaderTitleShrok from "../../../Coponents/Admin/AdminJobs/AdminAllJobs/HeaderTitleShrok";
+import Skeleton from "react-loading-skeleton";
+
+const JobApplicationsContainer = React.lazy(() =>
+	import("../../../Coponents/Admin/AdminJobs/AdminAllJobs/JobApplicationsContainer")
+);
 
 function JobApplicationsListPage() {
 	return (
@@ -20,8 +25,19 @@ function JobApplicationsListPage() {
 					<SideBarAdminShrok />
 					<div className="col-12 col-xl-9">
 						<AdminSectionTitle />
+
+						{/* Job list cards in lg screens ------------------------------------- */}
 						<JobApplicationsContainerLg />
-						<JobApplicationsContainer />
+
+						{/* Job list cards in small screens ------------------------------------- */}
+						<React.Suspense
+							fallback={
+								<Skeleton className="sef-Skeleton mt-4" inline count={3} height={200} />
+							}
+						>
+							<JobApplicationsContainer />
+						</React.Suspense>
+
 						<JobApplicationPagination />
 					</div>
 				</div>

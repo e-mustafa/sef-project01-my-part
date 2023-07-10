@@ -10,15 +10,13 @@
 	--Disabled: #e1e1e1;
 	--BlackOpacity: rgb(0 0 0 / 40%);
 	--gray-opacity: rgba(17, 17, 17, 0.5);
-	/* --DarkOpacity: rgba(26, 25, 25, 0.6); */
-	/* --BlackOpacity: rgba(19, 19, 19, 0.6); */
 	--blue-dark: #233a5f;
 	--white: #fff;
 	--border-width: 1.5px;
 
 	--light-color: #e5e5e5;
-
-	/* --bs-gutter-x: 10rem; */
+	--input-pg-color:rgb(110 110 110 / 50%);
+	/* --input-pg-gradient:linear-gradient(to right top, rgb(134 133 133 / 50%), rgb(134 133 133 / 50%)); */
 }
 
 * {
@@ -346,12 +344,6 @@ a {
 	font-weight: 600;
 }
 
-.create-cv input::before {
-	content: "merro";
-	position: absolute;
-	inset: 0;
-	background-color: var(--gray-dark) !important;
-}
 .create-cv input,
 .create-cv textarea,
 .create-cv input:focus,
@@ -360,10 +352,9 @@ a {
 	position: relative;
 	border: var(--border-width) solid var(--gray-dark);
 	outline: none;
-	background-color: var(--gray-dark) !important;
 	color: var(--white);
 	padding: 10px 15px;
-	background-image: linear-gradient(to right top, #3a3939, #3a3939, #3a3939, #3a3939, #3a3939);
+	background-color: var(--input-pg-color);
 }
 
 .create-cv input:focus,
@@ -381,10 +372,9 @@ a {
 .create-cv textarea:-webkit-autofill:focus,
 .create-cv textarea:-webkit-autofill:active {
 	border: var(--border-width) solid var(--gray-dark);
-	/* background-color: var(--gray-dark) !important; */
 	-webkit-text-fill-color: var(--white);
 	-webkit-background-clip: text;
-	-webkit-box-shadow: 0 0 0px 1000px var(--gray-dark) inset;
+	-webkit-box-shadow: 0 0 0px 1000px var(--input-pg-color) inset;
 	transition: background-color 5000s ease-in-out 0s;
 	caret-color: white;
 }

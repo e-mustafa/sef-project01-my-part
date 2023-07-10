@@ -58,10 +58,10 @@ function LoginCard() {
 				>
 					<div className="d-flex flex-column text-danger"> </div>
 
-					<div className="login-inputs form-control d-flex gap-2 align-items-center rounded px-3 py-1">
-						<i className="fa-regular fa-user fa-lg text_primary" />
+					<div className="login-inputs rounded">
+						<i className="login_left-icon fa-regular fa-user fa-lg text_primary" />
 						<input
-							className={`form-control pe-3`}
+							className={`form-control ps-5`}
 							autoFocus
 							type="text"
 							id="S_username"
@@ -73,13 +73,13 @@ function LoginCard() {
 						/>
 					</div>
 
-					<div className="login-inputs d-flex gap-2 align-items-center rounded px-3 py-1">
-						<i className="fa fa-lock fa-lg text_primary" />
+					<div className="login-inputs rounded">
+						<i className="login_left-icon fa fa-lock fa-lg text_primary" />
 
 						<input
 							id="S_password"
 							autoComplete=""
-							className="form-control"
+							className="form-control px-5"
 							placeholder="PASSWORD"
 							name="password"
 							type={showPassword ? "text" : "password"}
@@ -87,7 +87,10 @@ function LoginCard() {
 							onChange={handleInput}
 							ref={passwordRef}
 						/>
-						<div className="text-white-50 clickable" onClick={handelShowPassword}>
+						<div
+							className="login_right-icon text-white-50 clickable"
+							onClick={handelShowPassword}
+						>
 							{showPassword ? <FaRegEyeSlash size={22} /> : <FaRegEye size={22} />}
 						</div>
 					</div>
