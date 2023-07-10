@@ -118,7 +118,7 @@
 	user-select: none;
 	box-shadow: var(--bs-btn-box-shadow);
 }
-.step:hover .step-button ,
+.step:hover .step-button,
 .step-button:hover {
 	background-color: var(--primary-light);
 	box-shadow: var(--bs-btn-active-shadow);
@@ -322,10 +322,15 @@ a {
 	object-fit: cover;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
+	border: 2px solid var(--Disabled);
 }
+.cv--avatar-img {
+	width: 100%;
+	height: 100%;
+	object-fit: unset;
+	object-position: center;
+}
+
 /* ------------------------------------- section stepper ------------------------------------ */
 .stepper-container .swiper-slide {
 	width: 230px !important ;

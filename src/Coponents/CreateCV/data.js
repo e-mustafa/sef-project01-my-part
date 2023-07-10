@@ -38,6 +38,7 @@ export const initialFormData = {
 };
 
 export const InitialformData = {
+	image: "",
 	main_information: {
 		firstName: "",
 		LastName: "",
@@ -80,6 +81,7 @@ export const InitialformData = {
 };
 
 export const formDataFiled = {
+	image:"",
 	main_information: {
 		firstName: "Hani",
 		LastName: "Husamuddin",
@@ -128,7 +130,7 @@ export const formDataFiled = {
 	hobbiesAndInterests: ["video games", "movies", "books"],
 	links: [
 		{ sitename: "facebook", url: "facebook" },
-		{ sitename: "lenkedin", url: "facebook" },
+		{ sitename: "linkedin", url: "facebook" },
 		{ sitename: "twitter", url: "facebook" },
 		{ sitename: "github", url: "facebook" },
 	],

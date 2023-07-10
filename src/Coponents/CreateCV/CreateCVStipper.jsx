@@ -34,6 +34,8 @@ function CreateCVStipper({ data }) {
 					spaceBetween={30}
 					onSwiper={handleSwiperInit}
 					initialSlide={activePage}
+					centeredSlides={true}
+					centeredSlidesBounds={true}
 				>
 					{stepperData?.map((step) => (
 						<SwiperSlide key={step.id}>

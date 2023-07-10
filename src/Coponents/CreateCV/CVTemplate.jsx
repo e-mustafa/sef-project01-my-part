@@ -1,5 +1,6 @@
 import React from "react";
 import egyptFlagImg from "../../Images/Flag_of_Egypt.png";
+import seff_logoImg from "../../Images/seff_logo_black.jpg";
 import { websiteAvailableIcons } from "./data";
 
 function CVTemplate({ data }) {
@@ -18,8 +19,12 @@ function CVTemplate({ data }) {
 				<div className="row cv-part-1">
 					<div className="col-4 px-3 py-5 bg_blue">
 						<div className="overflow-hidden h-100 d-flex flex-column gap-4 ps-2">
-							<div className="cv--avatar">
-								<img src="avatar.png" alt="" className="rounded-circle" />
+							<div className="cv--avatar overflow-hidden">
+								<img
+									src={data.image || seff_logoImg}
+									alt={`${main_info?.firstName} ${main_info?.LastName}`}
+									className="cv--avatar-img rounded-circle"
+								/>
 							</div>
 							{/* personal information ------------------------------- */}
 							<div>
@@ -99,21 +104,21 @@ function CVTemplate({ data }) {
 														rel="noopener noreferrer"
 													>
 														{websiteAvailableIcons?.find((e) =>
-															e.includes(ele.sitename)
+															e.includes(ele?.sitename)
 														) ? (
 															<i
 																className={`fa-brands fa-${
 																	websiteAvailableIcons[
 																		websiteAvailableIcons?.findIndex((e) =>
-																			e.includes(ele.sitename)
+																			e.includes(ele?.sitename)
 																		)
 																	]
 																}  me-2`}
 															/>
 														) : (
-															<i class="fa-solid fa-up-right-from-square me-2"></i>
+															<i className="fa-solid fa-up-right-from-square me-2"></i>
 														)}
-														<span className="fs-13">{ele.sitename}</span>
+														<span className="fs-13">{ele?.sitename}</span>
 													</a>
 												)
 										)}
