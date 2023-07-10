@@ -49,7 +49,7 @@
 .login-inputs input:focus {
 	outline: none;
 	border: none;
-	background-color: transparent !important;
+	background-color: var(--gray-dark) !important;
 	color: var(--white);
 	padding: 10px 15px;
 	box-shadow: none;
@@ -59,7 +59,7 @@
 .login-inputs input:-webkit-autofill:hover,
 .login-inputs input:-webkit-autofill:focus,
 .login-inputs input:-webkit-autofill:active {
-	background-color: transparent !important;
+	background-color: var(--gray-dark) !important;
 	-webkit-text-fill-color: var(--white);
 	-webkit-background-clip: text;
 }

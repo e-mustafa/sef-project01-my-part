@@ -118,6 +118,7 @@
 	user-select: none;
 	box-shadow: var(--bs-btn-box-shadow);
 }
+.step:hover .step-button ,
 .step-button:hover {
 	background-color: var(--primary-light);
 	box-shadow: var(--bs-btn-active-shadow);
@@ -339,15 +340,25 @@ a {
 .create-cv label {
 	font-weight: 600;
 }
+
+.create-cv input::before {
+	content: "merro";
+	position: absolute;
+	inset: 0;
+	background-color: var(--gray-dark) !important;
+}
 .create-cv input,
 .create-cv textarea,
 .create-cv input:focus,
+.create-cv input:active,
 .create-cv textarea:focus {
+	position: relative;
 	border: var(--border-width) solid var(--gray-dark);
 	outline: none;
 	background-color: var(--gray-dark) !important;
 	color: var(--white);
 	padding: 10px 15px;
+	background-image: linear-gradient(to right top, #3a3939, #3a3939, #3a3939, #3a3939, #3a3939);
 }
 
 .create-cv input:focus,
@@ -359,12 +370,25 @@ a {
 }
 
 .create-cv input:-webkit-autofill,
-.create-cv input:-webkit-autofill:hover,
+.create-cv textarea:-webkit-autofill,
 .create-cv input:-webkit-autofill:focus,
-.create-cv input:-webkit-autofill:active {
-	background-color: var(--gray-dark) !important;
+.create-cv input:-webkit-autofill:active,
+.create-cv textarea:-webkit-autofill:focus,
+.create-cv textarea:-webkit-autofill:active {
+	border: var(--border-width) solid var(--gray-dark);
+	/* background-color: var(--gray-dark) !important; */
 	-webkit-text-fill-color: var(--white);
 	-webkit-background-clip: text;
+	-webkit-box-shadow: 0 0 0px 1000px var(--gray-dark) inset;
+	transition: background-color 5000s ease-in-out 0s;
+	caret-color: white;
+}
+
+.create-cv input:-webkit-autofill:focus,
+.create-cv input:-webkit-autofill:active,
+.create-cv textarea:-webkit-autofill:focus,
+.create-cv textarea:-webkit-autofill:active {
+	border: var(--border-width) solid var(--primary);
 }
 
 .create-cv textarea {
@@ -505,6 +529,7 @@ a {
 	border-radius: 4px;
 	padding: 8px 8px;
 	overflow: hidden;
+	min-height: 28px;
 }
 .cv-squire-info h6 {
 	color: var(--blue-dark);

@@ -1,13 +1,19 @@
 import React from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { LiaTrashAlt } from "react-icons/lia";
+import { useOutletContext } from "react-router-dom";
 
-function Education5Form({ formData, handelChange, addEducationInput, deleteEducation }) {
+function Education5Form() {
+	const [formData, , , , , , , handelChangeComplex, deleteComplexItem, addComplexItem] =
+		useOutletContext();
+	const education = formData?.education;
+	console.log(useOutletContext());
+	console.log(education);
 	return (
 		<>
 			<h5 className="mb-4 mb-lg-5">Education</h5>
 			<div className="d-flex flex-column gap-3 w-100">
-				{formData?.map((ele, i) => (
+				{education?.map((ele, i) => (
 					<div key={i}>
 						<div className="add-experience-container row row-gap-3 g-2 align-items-center mx-0 mx-lg-2 px-0 px-lg-3 py-4 mb-3">
 							<div className="col-12">
@@ -23,7 +29,7 @@ function Education5Form({ formData, handelChange, addEducationInput, deleteEduca
 									id="inputOrganizationName"
 									name="organizationName"
 									value={ele?.organizationName ?? ""}
-									onChange={(e) => handelChange(e, i)}
+									onChange={(e) => handelChangeComplex(e, i, "education")}
 								/>
 							</div>
 
@@ -37,7 +43,7 @@ function Education5Form({ formData, handelChange, addEducationInput, deleteEduca
 									id="inputDegree"
 									name="degree"
 									value={ele?.degree ?? ""}
-									onChange={(e) => handelChange(e, i)}
+									onChange={(e) => handelChangeComplex(e, i, "education")}
 								/>
 							</div>
 
@@ -51,7 +57,7 @@ function Education5Form({ formData, handelChange, addEducationInput, deleteEduca
 									id="inputPeriodFrom"
 									name="periodFrom"
 									value={ele?.periodFrom ?? ""}
-									onChange={(e) => handelChange(e, i)}
+									onChange={(e) => handelChangeComplex(e, i, "education")}
 								/>
 							</div>
 
@@ -65,7 +71,7 @@ function Education5Form({ formData, handelChange, addEducationInput, deleteEduca
 									id="inputPeriodTo"
 									name="periodTo"
 									value={ele?.periodTo ?? ""}
-									onChange={(e) => handelChange(e, i)}
+									onChange={(e) => handelChangeComplex(e, i, "education")}
 								/>
 							</div>
 
@@ -79,7 +85,7 @@ function Education5Form({ formData, handelChange, addEducationInput, deleteEduca
 									name="description"
 									rows="5"
 									value={ele?.description ?? ""}
-									onChange={(e) => handelChange(e, i)}
+									onChange={(e) => handelChangeComplex(e, i, "education")}
 									autoFocus
 								></textarea>
 							</div>
@@ -89,7 +95,7 @@ function Education5Form({ formData, handelChange, addEducationInput, deleteEduca
 							className=" text-end pe-5 mb-4"
 							data-bs-toggle="tooltip"
 							data-bs-title="Remove item"
-							onClick={() => deleteEducation()}
+							onClick={() => deleteComplexItem(i, "education")}
 						>
 							<LiaTrashAlt size={26} className="clickable click-primary hover-scale" />
 						</div>
@@ -100,7 +106,7 @@ function Education5Form({ formData, handelChange, addEducationInput, deleteEduca
 				className="circle-plus__icon mb-2 pe-2  text-end"
 				data-bs-toggle="tooltip"
 				data-bs-title="Add new item"
-				onClick={addEducationInput}
+				onClick={() => addComplexItem("education")}
 			>
 				<AiOutlinePlusCircle size={26} className="clickable click-primary hover-scale" />
 			</div>

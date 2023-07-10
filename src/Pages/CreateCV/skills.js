@@ -47,6 +47,7 @@ function SkillsPage() {
 			skills: [...formData.skills, ""],
 		}));
 	}
+	
 	return (
 		<div style={{ backgroundColor: "rgb(26 26 26 / .9)" }}>
 			<HeaderTitle title={"Create CV"} />

@@ -5,11 +5,12 @@ import { Tooltip } from "bootstrap";
 import { LiaTrashAlt } from "react-icons/lia";
 import { useOutletContext } from "react-router-dom";
 
-function Skills3Form() {
+function HobbiesAndInterests7Form() {
 	const tooltipRef = useRef(null);
 	const [formData, , , , handelChangeSkills, addSkillInput, deleteSkill] = useOutletContext();
-	const skills = formData?.skills;
-
+	const hobbiesAndInterests = formData?.hobbiesAndInterests;
+	
+	
 	// enable bootstrap tooltip ------------------------------
 	useEffect(() => {
 		const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
@@ -23,12 +24,12 @@ function Skills3Form() {
 
 	return (
 		<>
-			<h5 className="mb-4  text-capitalize">Skills</h5>
+			<h5 className="mb-4  text-capitalize">Hobbies And Interests</h5>
 			<div className="cv-form row g-3 fs-18">
 				<div className="col-12 d-flex gap-3 align-items-center">
 					<div className="d-flex flex-column gap-3 w-100">
-						{skills &&
-							skills?.map((ele, i) => (
+						{hobbiesAndInterests &&
+							hobbiesAndInterests?.map((ele, i) => (
 								<div className="d-flex gap-2 align-items-center flex-grow-1" key={i}>
 									<div className="flex-grow-1 ">
 										<input
@@ -37,7 +38,7 @@ function Skills3Form() {
 											id="inputSkills"
 											name="skills"
 											value={ele ?? ""}
-											onChange={(e) => handelChangeSkills(e, i, "skills")}
+											onChange={(e) => handelChangeSkills(e, i, "hobbiesAndInterests")}
 										/>
 									</div>
 									<div
@@ -45,7 +46,7 @@ function Skills3Form() {
 										ref={tooltipRef}
 										data-bs-toggle="tooltip"
 										data-bs-title="Remove item"
-										onClick={() => deleteSkill(i, "skills")}
+										onClick={() => deleteSkill(i, "hobbiesAndInterests")}
 									>
 										<LiaTrashAlt size={26} />
 									</div>
@@ -58,7 +59,7 @@ function Skills3Form() {
 						ref={tooltipRef}
 						data-bs-toggle="tooltip"
 						data-bs-title="Add new item"
-						onClick={() => addSkillInput("skills")}
+						onClick={() => addSkillInput("hobbiesAndInterests")}
 					>
 						<AiOutlinePlusCircle size="26" />
 					</div>
@@ -68,4 +69,4 @@ function Skills3Form() {
 	);
 }
 
-export default Skills3Form;
+export default HobbiesAndInterests7Form;

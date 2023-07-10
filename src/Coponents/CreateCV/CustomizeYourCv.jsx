@@ -2,8 +2,8 @@ import React from "react";
 
 function CustomizeYourCv() {
 	return (
-		<div className="container-fluid mt-5">
-			<div className="row mb-5">
+		<div className="container-fluid mt-5 mb-4">
+			<div className="row">
 				<div className="col-12 col-lg-6">
 					<h2 className="fw-bold text-capitalize">Customize your cv</h2>
 					<h6 className="">

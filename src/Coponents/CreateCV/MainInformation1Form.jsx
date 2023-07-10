@@ -4,12 +4,15 @@ import egyptFlagImg from "../../Images/Flag_of_Egypt.png";
 // import PhoneInput from "react-phone-input-2";
 //import 'react-phone-input-2/lib/style.css';
 import DragDropImg from "./DragDropImg";
+import { useOutletContext } from "react-router-dom";
 // import PhoneInput from "./PhoneInput";
 // import PhoneInput2 from "./phoneInput2";
 
-function MainInformation1Form({ formData, handelChange, handelChangeMobile }) {
-	console.log(formData);
+function MainInformation1Form() {
+	const [formData, handelChange, handelChangeMobile] = useOutletContext();
+	const main_info = formData?.main_information;
 	return (
+		
 		<form className="cv-form row g-3">
 			<div className="col-12 col-md-6">
 				<label htmlFor="inputFirstName" className="form-label">
@@ -20,8 +23,8 @@ function MainInformation1Form({ formData, handelChange, handelChangeMobile }) {
 					className="form-control"
 					id="inputFirstName"
 					name="firstName"
-					value={formData?.firstName ?? ""}
-					onChange={handelChange}
+					value={main_info?.firstName ?? ""}
+					onChange={(e) => handelChange(e, "main_information")}
 					autoFocus
 				/>
 			</div>
@@ -34,8 +37,9 @@ function MainInformation1Form({ formData, handelChange, handelChangeMobile }) {
 					className="form-control"
 					id="inputLastName"
 					name="LastName"
-					value={formData?.LastName ?? ""}
-					onChange={handelChange}
+					value={main_info?.LastName ?? ""}
+					// onChange={handelChange}
+					onChange={(e) => handelChange(e, "main_information")}
 				/>
 			</div>
 			<div className="col-12 col-md-6">
@@ -47,8 +51,9 @@ function MainInformation1Form({ formData, handelChange, handelChangeMobile }) {
 					className="form-control"
 					id="inputProfession"
 					name="profession"
-					value={formData?.profession ?? ""}
-					onChange={handelChange}
+					value={main_info?.profession ?? ""}
+					// onChange={handelChange}
+					onChange={(e) => handelChange(e, "main_information")}
 				/>
 			</div>
 			<div className="col-12 col-md-6">
@@ -60,8 +65,9 @@ function MainInformation1Form({ formData, handelChange, handelChangeMobile }) {
 					className="form-control"
 					id="inputCountry"
 					name="country"
-					value={formData?.country ?? ""}
-					onChange={handelChange}
+					value={main_info?.country ?? ""}
+					// onChange={handelChange}
+					onChange={(e) => handelChange(e, "main_information")}
 				/>
 			</div>
 			<div className="col-12 col-md-4">
@@ -73,8 +79,9 @@ function MainInformation1Form({ formData, handelChange, handelChangeMobile }) {
 					className="form-control"
 					id="inputCity"
 					name="city"
-					value={formData?.city ?? ""}
-					onChange={handelChange}
+					value={main_info?.city ?? ""}
+					// onChange={handelChange}
+					onChange={(e) => handelChange(e, "main_information")}
 				/>
 			</div>
 			<div className="col-12 col-md-8">
@@ -92,8 +99,9 @@ function MainInformation1Form({ formData, handelChange, handelChangeMobile }) {
 						className="form-control "
 						id="inputMobileNumber"
 						name="mobileNumber"
-						value={formData?.mobileNumber ?? ""}
-						onChange={handelChange}
+						value={main_info?.mobileNumber ?? ""}
+						// onChange={handelChange}
+						onChange={(e) => handelChange(e, "main_information")}
 					/>
 				</div>
 			</div>
@@ -108,8 +116,9 @@ function MainInformation1Form({ formData, handelChange, handelChangeMobile }) {
 					className="form-control"
 					id="inputCVEmail"
 					name="email"
-					value={formData?.email ?? ""}
-					onChange={handelChange}
+					value={main_info?.email ?? ""}
+					// onChange={handelChange}
+					onChange={(e) => handelChange(e, "main_information")}
 				/>
 			</div>
 
@@ -118,7 +127,7 @@ function MainInformation1Form({ formData, handelChange, handelChangeMobile }) {
 					country={"eg"}
 					name="mobileNumber"
 					inputProps={{ name: "mobileNumber" }}
-					value={formData?.mobileNumber}
+					value={main_info?.mobileNumber}
 					onChange={handelChangeMobile}
 					countryCodeEditable
 					// autoFormat={false}

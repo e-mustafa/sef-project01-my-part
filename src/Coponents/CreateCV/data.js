@@ -9,13 +9,18 @@ export const stepperData = [
 	{ id: 8, link: "links", title: "Links" },
 ];
 
-const skillsItems = 4;
+// export const websiteAvailableIconObject = [
+// 	{ name: "linkedin", icon: "fa-linkedin" },
+// 	{ name: "github", icon: "fa-github" },
+// 	{ name: "facebook", icon: "fa-facebook" },
+// 	{ name: "twitter", icon: "fa-twitter" },
+// 	{ name: "instagram", icon: "fa-instagram" },
+// 	{ name: "youtube", icon: "fa-youtube" },
+// 	{ name: "whatsapp", icon: "fa-whatsapp" },
+// 	{ name: "telegram", icon: "fa-telegram" },
+// ];
 
-export const initialFormData = {
-	skills: Array(skillsItems).fill(""),
-};
-
-export const websiteAvilableIcon = [
+export const websiteAvailableIcons = [
 	"linkedin",
 	"github",
 	"facebook",
@@ -26,36 +31,105 @@ export const websiteAvilableIcon = [
 	"telegram",
 ];
 
-export const websiteAvilableIconObject = [
-	{ name: "linkedin", icon: "fa-linkedin" },
-	{ name: "github", icon: "fa-github" },
-	{ name: "facebook", icon: "fa-facebook" },
-	{ name: "twitter", icon: "fa-twitter" },
-	{ name: "instagram", icon: "fa-instagram" },
-	{ name: "youtube", icon: "fa-youtube" },
-	{ name: "whatsapp", icon: "fa-whatsapp" },
-	{ name: "telegram", icon: "fa-telegram" },
-];
+const iniInputsCount = 3;
 
-<i className="fa-solid fa-up-right-from-square" />;
+export const initialFormData = {
+	skills: Array(iniInputsCount).fill(""),
+};
 
-let x = `Hani Husamuddin
-Frontend Developer
-Surakarta, December 2, 1994
-+20 2948503402
-hani.husam@gmail.com
-Cairo, Egypt
-Skills
-• HIML and CSS
-• Scripting language: Javascript,
-Typescript, Python, Java
-• Framework/Library: Django, React,
-Next, Bootstrap, TailwindCSS, etc
-• Understanding UI Design; Visual
-Hierarchy, Design System, etc
-Honor & Award
-Hobbies & Interest
-Links and Credentials
-in Linkedin
-© Github
- Website`;
+export const InitialformData = {
+	main_information: {
+		firstName: "",
+		LastName: "",
+		profession: "",
+		city: "",
+		country: "",
+		mobileNumber: "",
+		email: "",
+	},
+	about: "",
+	skills: [Array(iniInputsCount).fill("")],
+	experience: [
+		{
+			companyName: "",
+			position: "",
+			periodFrom: "",
+			periodTo: "",
+			description: "",
+			img: "",
+		},
+	],
+	education: [
+		{
+			organizationName: "",
+			degree: "",
+			periodFrom: "",
+			periodTo: "",
+			description: "",
+		},
+	],
+	honersAndAwards: [
+		{
+			awardName: "",
+			awardYear: "",
+			description: "",
+		},
+	],
+	hobbiesAndInterests: [Array(iniInputsCount).fill("")],
+	links: [Array(iniInputsCount).fill({ sitename: "", url: "" })],
+};
+
+export const formDataFiled = {
+	main_information: {
+		firstName: "Hani",
+		LastName: "Husamuddin",
+		profession: "Frontend Developer",
+		city: "Cairo",
+		country: "Egypt",
+		mobileNumber: "2948503402",
+		email: "hani.husam@gmail.com",
+	},
+	about: "I have a background in information technology, with a focus on frontend development and UI design. I am the type of person who seizes every opportunity to learn something new. That is why I enjoy challenges. From there, I'm under pressure to learn quickly and gain a lot of new experience.",
+	skills: [
+		"HTML and CSS",
+		"Scripting language: Javascript, Typescript, Python, Java",
+		"Framework/Library: Django, React, Next, Bootstrap, TailwindCSS, etc",
+		"Understanding UI Design; Visual Hierarchy, Design System, etc",
+	],
+	experience: [
+		{
+			companyName: "upwork",
+			position: "frontend developer",
+			periodFrom: "Nov 2019",
+			periodTo: "present",
+			description:
+				"Upwork is an American freelancing platform where enterprises and individuals connect in order to conduct business. I am currently accepting remote or freelance Web Development and UI Design work from this platform",
+			img: "",
+		},
+	],
+	education: [
+		{
+			organizationName: 'Informtics, Universities Pembangunan Nasional "Veteran"* Yogyakarta',
+			degree: "Bachelor of Computer Science, Artificial intelligence",
+			periodFrom: "2015",
+			periodTo: "2019",
+			description:
+				"I graduated in July 2019 with a GPA of 3.63. One of the award recipients for the best graduate of the university at the time. in my thesis, I looked into how Natural Language Processing (NLP) was used in Telegram Bot. For the NLP approach method, I used Neural Network (Deep Learning) and Text Mining.",
+		},
+	],
+	honersAndAwards: [
+		{
+			awardName: "Best Graduated",
+			awardYear: "2019",
+			description:
+				'included in one of the award recipients of the best graduate students in the IV graduation period of UPN "Veteran" Yogyakarta',
+		},
+	],
+	hobbiesAndInterests: ["video games", "movies", "books"],
+	links: [
+		{ sitename: "facebook", url: "facebook" },
+		{ sitename: "lenkedin", url: "facebook" },
+		{ sitename: "twitter", url: "facebook" },
+		{ sitename: "github", url: "facebook" },
+	],
+};

@@ -3,15 +3,18 @@ import React from "react";
 import DragDropImgSmall from "./DragDropImgSmall";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { LiaTrashAlt } from "react-icons/lia";
+import { useOutletContext } from "react-router-dom";
 
-function Experience4Form({ formData, handelChange, addExperienceInput, deleteExperience }) {
-	console.log(formData);
+function Experience4Form() {
+	const [formData, , , , , , , handelChangeComplex, deleteComplexItem, addComplexItem] =
+		useOutletContext();
+	const experience = formData?.experience;
 	return (
 		<>
 			<h5 className="mb-4 mb-lg-5">Experience</h5>
 
 			<div className="d-flex flex-column gap-3 w-100">
-				{formData?.map((ele, i) => (
+				{experience?.map((ele, i) => (
 					<div key={i}>
 						<div className="add-experience-container row row-gap-3 g-2 align-items-center mx-0 mx-lg-2 px-0 px-lg-3 py-4 mb-3">
 							<div className="col-12">
@@ -24,7 +27,7 @@ function Experience4Form({ formData, handelChange, addExperienceInput, deleteExp
 									id="inputCompanyName"
 									name="companyName"
 									value={ele?.companyName ?? ""}
-									onChange={(e) => handelChange(e, i)}
+									onChange={(e) => handelChangeComplex(e, i, "experience")}
 								/>
 							</div>
 
@@ -38,7 +41,7 @@ function Experience4Form({ formData, handelChange, addExperienceInput, deleteExp
 									id="inputPositionName"
 									name="position"
 									value={ele?.position ?? ""}
-									onChange={(e) => handelChange(e, i)}
+									onChange={(e) => handelChangeComplex(e, i, "experience")}
 								/>
 							</div>
 
@@ -52,7 +55,7 @@ function Experience4Form({ formData, handelChange, addExperienceInput, deleteExp
 									id="inputPeriodFrom"
 									name="periodFrom"
 									value={ele?.periodFrom ?? ""}
-									onChange={(e) => handelChange(e, i)}
+									onChange={(e) => handelChangeComplex(e, i, "experience")}
 								/>
 							</div>
 
@@ -66,7 +69,7 @@ function Experience4Form({ formData, handelChange, addExperienceInput, deleteExp
 									id="inputPeriodTo"
 									name="periodTo"
 									value={ele?.periodTo ?? ""}
-									onChange={(e) => handelChange(e, i)}
+									onChange={(e) => handelChangeComplex(e, i, "experience")}
 								/>
 							</div>
 							<div className="col-12 ">
@@ -85,7 +88,7 @@ function Experience4Form({ formData, handelChange, addExperienceInput, deleteExp
 											name="description"
 											rows="5"
 											value={ele?.description ?? ""}
-											onChange={(e) => handelChange(e, i)}
+											onChange={(e) => handelChangeComplex(e, i, "experience")}
 											autoFocus
 										></textarea>
 									</div>
@@ -97,7 +100,7 @@ function Experience4Form({ formData, handelChange, addExperienceInput, deleteExp
 							className=" text-end pe-5 mb-4"
 							data-bs-toggle="tooltip"
 							data-bs-title="Remove item"
-							onClick={() => deleteExperience()}
+							onClick={() => deleteComplexItem(i, "experience")}
 						>
 							<LiaTrashAlt size={26} className="clickable click-primary hover-scale" />
 						</div>
@@ -109,7 +112,7 @@ function Experience4Form({ formData, handelChange, addExperienceInput, deleteExp
 				className="circle-plus__icon  mb-2 pe-2  text-end"
 				data-bs-toggle="tooltip"
 				data-bs-title="Add new item"
-				onClick={addExperienceInput}
+				onClick={() => addComplexItem("experience")}
 			>
 				<AiOutlinePlusCircle size={26} className="clickable click-primary hover-scale" />
 			</div>

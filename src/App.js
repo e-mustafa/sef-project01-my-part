@@ -5,41 +5,47 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "./App.css";
 
 import "./Pages/CreateCV/create-cv-style.css";
-import { Route, Routes } from "react-router-dom";
-import MainInformationPage from "./Pages/CreateCV/main-information";
-import SummaryPage from "./Pages/CreateCV/summary";
-import SkillsPage from "./Pages/CreateCV/skills";
-import HonersAndAwardsPage from "./Pages/CreateCV/honers-and-awards";
-import HobbiesAndInterestsPage from "./Pages/CreateCV/hobbies-and-interests";
-import ExperiencePage from "./Pages/CreateCV/experience";
-import EducationPage from "./Pages/CreateCV/education";
-import LinksPage from "./Pages/CreateCV/links";
+import { Navigate, Route, Routes } from "react-router-dom";
+
 import CreateCVPage from "./Pages/CreateCV/CreateCVPage";
 
 import AdminPanelJobs from "./Pages/Admin/AdminJobs/admin-panel-jobs";
 import JobApplicationsListPage from "./Pages/Admin/AdminJobs/job-applications-list";
 import LoginPage from "./Pages/Auth/LoginPage";
+import Summary2Form from "./Coponents/CreateCV/Summary2Form";
+import Skills3Form from "./Coponents/CreateCV/Skills3Form";
+import HonersAndAwards6Form from "./Coponents/CreateCV/HonersAndAwards6Form";
+import Experience4Form from "./Coponents/CreateCV/Experience4Form";
+import Education5Form from "./Coponents/CreateCV/Education5Form";
+import Links8Form from "./Coponents/CreateCV/Links8Form";
+import MainInformation1Form from "./Coponents/CreateCV/MainInformation1Form";
+import HobbiesAndInterests7Form from "./Coponents/CreateCV/HobbiesAndInterests7Form";
+
+
 
 function App() {
 	return (
 		<div className="App">
 			<Routes>
 				<Route path="/auth/login" element={<LoginPage />} />
-				
+
 				<Route path="/admin/jobs" element={<AdminPanelJobs />} />
 				<Route path="/admin/jobs/applications" element={<JobApplicationsListPage />} />
-				
-				{/* Create Cv */}
-				<Route path="/createcv" element={<CreateCVPage />} />
-				<Route path="/createcv/main-information" element={<MainInformationPage />} />
-				<Route path="/createcv/summary" element={<SummaryPage />} />
-				<Route path="/createcv/skills" element={<SkillsPage />} />
-				<Route path="/createcv/honers-and-awards" element={<HonersAndAwardsPage />} />
-				<Route path="/createcv/hobbies-and-interests" element={<HobbiesAndInterestsPage />} />
-				<Route path="/createcv/experience" element={<ExperiencePage />} />
-				<Route path="/createcv/education" element={<EducationPage />} />
-				<Route path="/createcv/links" element={<LinksPage />} />
 
+				{/* Create Cv */}
+				<Route path="/createcv" element={<CreateCVPage />}>
+					{/* redirect to first route -------------------------------- */}
+					<Route index element={<Navigate replace to="/createcv/main-information" />} />
+					
+					<Route path="main-information" element={<MainInformation1Form />} />
+					<Route path="summary" element={<Summary2Form />} />
+					<Route path="skills" element={<Skills3Form />} />
+					<Route path="honers-and-awards" element={<HonersAndAwards6Form />} />
+					<Route path="hobbies-and-interests" element={<HobbiesAndInterests7Form />} />
+					<Route path="experience" element={<Experience4Form />} />
+					<Route path="education" element={<Education5Form />} />
+					<Route path="links" element={<Links8Form />} />
+				</Route>
 			</Routes>
 		</div>
 	);
