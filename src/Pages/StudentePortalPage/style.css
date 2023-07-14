@@ -1,0 +1,479 @@
+:root {
+  --Primary: #bf9b30;
+  --Green: #34a853;
+  --Red: #1a1919;
+  --Grey: #d0d0d0;
+  --Black: #000000;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url(../../Images/secondary_background.jpg) no-repeat fixed center;
+  background-size: cover;
+  position: relative;
+  color: var(--white);
+}
+
+.container1 {
+  padding-top: 120px;
+  width: 87%;
+  margin: auto;
+}
+
+.container2 {
+  width: 87%;
+  margin: auto;
+}
+
+.background-color {
+  /* background-color: #1a1919f1; */
+}
+
+.overlayOnImage {
+  position: absolute;
+  z-index: -5;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1a1919f1;
+}
+
+/* 
+.titles-page {
+  font-size: 55px;
+}
+
+.introuduction-text h4 {
+  font-size: 38px !important;
+
+}
+
+.titles-page1 {
+  color: var(--Primary);
+}
+
+
+.instructor-text,.instructor-subtext {
+
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.instructor-text {
+  color: #BF9B30;
+}
+
+button {
+
+  width: 200px;
+  height: 60px;
+  background-color:var(--Primary) !important;
+  color: white !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+
+}
+
+@media(max-width:567px) {
+  .titles-page {
+    font-size: 35px !important;
+  }
+
+
+  .introuduction-text h4 {
+    font-size: 23px !important;
+
+  }
+
+  .instructor-text,.instructor-subtext {
+
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  button {
+    height: 40px !important;
+    font-size: 13px !important;
+    width: 110px !important;
+
+  }
+}
+
+/* ///////////////////////////////////////    Sub Title      //////////////////////////////////////////// */
+
+.studentportal {
+  color: var(--Grey);
+}
+
+.studentportalline {
+  background-color: var(--Primary);
+  width: 80px;
+  height: 1px;
+  margin: -7px 0px 5px 2px;
+}
+
+/* ////////////////////////     Student Portal Title And View    //////////////////// */
+
+.welcom-back,
+.welcom-back1 {
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.welcom-back1 {
+  color: var(--Primary);
+}
+
+.btn-view-profile {
+  background-color: var(--Primary);
+  color: var(--white);
+  font-size: 17px !important;
+  text-transform: uppercase;
+  margin-top: 7px;
+}
+
+@media (max-width: 567px) {
+  .welcom-back,
+  .welcom-back1 {
+    font-size: 23px;
+  }
+
+  .btn-view-profile {
+    font-size: 14px !important;
+    margin-top: 20px;
+    width: 100px;
+    padding: 5px;
+  }
+}
+
+/* ///////////////////////////////////     Number Upcoming And Registered And Completed    //////////////////////////// */
+
+.Number-Upcoming-Registered-Completed {
+  width: 100% !important;
+  border-radius: 8px;
+  padding: 50px 0px 50px 10px;
+  background-color: var(--Black);
+  margin-left: 0px !important;
+}
+
+.Number-Upcoming-Registered h2 {
+  height: 80px;
+  font-size: 30px;
+  font-weight: 600;
+  border: 2px solid var(--Primary);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.Number-Upcoming-Registered p {
+  font-size: 20px;
+}
+
+/* //////////////////////////////   Level And ProgressBar    //////////////////////////////////////// */
+
+.LevelAndProgressBar h4 {
+  margin-bottom: 23px;
+  font-size: 25px;
+}
+
+.progress {
+  height: 11px;
+  padding: 0;
+}
+
+.progress-bar {
+  background-color: var(--Primary);
+}
+
+@media (max-width: 567px) {
+  .LevelAndProgressBar h4 {
+    margin-bottom: 13px;
+    font-size: 17px;
+  }
+}
+
+/* //////////////////////////////////      All Clear          //////////////////////////////// */
+
+.AllClear {
+  border-radius: 5px;
+  background-color: #b7b4b467;
+  padding: 40px 0px 30px 20px;
+  margin: 50px 0px;
+}
+
+.AllClear i {
+  font-size: 40px;
+}
+
+.AllClear h4 {
+  margin: -27px 0px 0px 55px;
+  font-size: 22px;
+}
+
+@media (max-width: 567px) {
+  .AllClear {
+    padding: 20px 0px 10px 10px !important;
+  }
+
+  .AllClear i {
+    font-size: 27px !important;
+  }
+
+  .AllClear h4 {
+    font-size: 15px;
+    margin: -28px 0px 0px 40px;
+  }
+}
+
+/* //////////////////////////////      Registered Courses     //////////////////////////// */
+
+.Registered-Courses-introuduction-text {
+  border-radius: 8px;
+  padding: 30px 0px 0px 20px !important;
+  background-color: var(--Black);
+}
+
+.Registered-Courses-title {
+  font-size: 33px;
+}
+
+.Registered-Courses-introuduction-text h4 {
+  font-size: 26px;
+}
+
+.Registered-Courses-instructor-text,
+.Registered-Courses-instructor-subtext,
+.Registered-Courses-lev1 {
+  font-size: 17px;
+}
+
+.Registered-Courses-instructor-subtext {
+  color: var(--Primary);
+}
+
+.Registered-Courses-lev1 {
+  font-size: 19px;
+}
+
+.Registered-Courses-button {
+  background-color: var(--Primary);
+  color: var(--white);
+  font-size: 14px !important;
+  text-transform: uppercase;
+}
+
+@media (max-width: 567px) {
+  .Registered-Courses-title {
+    font-size: 23px;
+  }
+
+  .Registered-Courses-introuduction-text h4 {
+    font-size: 19px;
+  }
+
+  .Registered-Courses-instructor-text,
+  .Registered-Courses-instructor-subtext,
+  .Registered-Courses-lev1 {
+    font-size: 14px;
+  }
+
+  .Registered-Courses-button {
+    font-size: 14px !important;
+    width: 100px;
+    padding: 3px;
+  }
+}
+
+/* ///////////////////////////////////    Upcoming  Exams /////////////////////// */
+
+.Upcoming-Exams-title {
+  font-size: 33px;
+}
+
+.Upcoming-Exams-wed {
+  font-size: 15px;
+}
+
+.Upcoming-Exams-introuduction-text h4 {
+  font-size: 23px;
+}
+
+.Upcoming-Exams-instructor-text,
+.Upcoming-Exams-instructor-subtext,
+.Upcoming-Exams-lev1Exam {
+  font-size: 17px;
+}
+
+.Upcoming-Exams-instructor-text {
+  color: var(--Primary);
+}
+
+.list-group-item {
+  background-color: var(--Primary) !important;
+  height: 30px !important;
+  border: none !important;
+}
+
+.list-group {
+  background-color: var(--Black);
+}
+
+@media (max-width: 567px) {
+  .Upcoming-Exams-title {
+    font-size: 23px;
+  }
+
+  .Upcoming-Exams-wed {
+    font-size: 12px;
+  }
+
+  .Upcoming-Exams-introuduction-text h4 {
+    font-size: 19px;
+  }
+
+  .Upcoming-Exams-instructor-text,
+  .Upcoming-Exams-instructor-subtext,
+  .Upcoming-Exams-lev1Exam {
+    font-size: 14px;
+  }
+
+  .lev1Exam {
+    font-size: 19px !important;
+  }
+}
+
+/* /////////////////////////////////         Here-Is-How-You  //////////////////////////// */
+
+.card-body,
+.card-body1 {
+  background: var(--Black);
+}
+
+.here-is-how-title,
+.here-is-how-title1 {
+  font-size: 33px;
+}
+.here-is-how-title1 {
+  color: var(--Primary);
+}
+
+.circularparent {
+  margin: 30px 0px;
+  position: relative;
+  width: 130px !important;
+  height: 130px !important;
+}
+
+.circularchildren {
+  width: 6em;
+  height: 6em;
+  position: absolute;
+}
+
+.circularchildren h4 {
+  font-size: 23px !important;
+}
+
+.here-is-how-introuduction-text,
+.here-is-how-hour {
+  font-size: 20px;
+}
+.here-is-how-lev1 {
+  font-size: 24px;
+}
+
+@media (max-width: 567px) {
+  .here-is-how-title,
+  .here-is-how-title1 {
+    font-size: 23px;
+  }
+  .circularparent {
+    margin: 25px 0px !important;
+    width: 65px !important;
+    height: 65px !important;
+  }
+
+  .circularchildren {
+    width: 3em;
+    height: 3em;
+  }
+  .circularchildren h4 {
+    font-size: 13px !important;
+  }
+
+  .card-body {
+    padding-left: 25px !important;
+  }
+  .here-is-how-introuduction-text,
+  .here-is-how-hour {
+    font-size: 15px;
+    text-align: left;
+    line-height: 18px;
+  }
+
+  .here-is-how-lev1 {
+    font-size: 17px;
+    text-align: left;
+    margin: 0px 0px 7px 0px !important;
+  }
+}
+
+/* //////////////////////////////////   Earned-Certificates     /////////////////////////////////////// */
+
+.Earned-Certificates-title {
+  font-size: 33px;
+}
+
+.Earned-Certificates-introuduction-text h4 {
+  font-size: 26px;
+}
+
+.Earned-Certificates-instructor-text,
+.Earned-Certificates-instructor-subtext {
+  font-size: 17px;
+}
+
+.Earned-Certificates-instructor-subtext {
+  color: var(--Primary);
+}
+
+.Earned-Certificates-box {
+  border-radius: 8px;
+  margin: 0px 0px 50px !important;
+  padding: 17px !important;
+  background-color: var(--Black);
+}
+
+.Earned-Certificates-button {
+  background-color: var(--Primary);
+  color: var(--white);
+  font-size: 16px !important;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+@media (max-width: 567px) {
+  .Earned-Certificates-title {
+    font-size: 23px;
+  }
+
+  .Earned-Certificates-introuduction-text h4 {
+    font-size: 19px;
+  }
+
+  .Earned-Certificates-instructor-text,
+  .Earned-Certificates-instructor-subtext {
+    font-size: 14px;
+  }
+
+  .Earned-Certificates-button {
+    font-size: 14px !important;
+    width: 100px;
+    padding: 3px;
+  }
+}

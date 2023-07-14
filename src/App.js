@@ -22,8 +22,9 @@ import MainInformation1Form from "./Coponents/CreateCV/MainInformation1Form";
 import HobbiesAndInterests7Form from "./Coponents/CreateCV/HobbiesAndInterests7Form";
 import ForgetPasswordPage from "./Pages/Auth/forget-password-page";
 import ResetPasswordPage from "./Pages/Auth/reset-password-page";
-
-
+import StudentPortalPage from "./Pages/StudentePortalPage/StudentPortalPage";
+import InstructorPortalPage from "./Pages/InstructorPortalPage/InstructorPortalPage";
+import RegisterPage from "./Pages/Auth/RegisterPage";
 
 function App() {
 	return (
@@ -32,9 +33,13 @@ function App() {
 				<Route path="/auth/login" element={<LoginPage />} />
 				<Route path="/auth/forget-password" element={<ForgetPasswordPage />} />
 				<Route path="/auth/reset-password" element={<ResetPasswordPage />} />
+				<Route path="/singup" element={<RegisterPage />} />
 
 				<Route path="/admin/jobs" element={<AdminPanelJobs />} />
 				<Route path="/admin/jobs/applications" element={<JobApplicationsListPage />} />
+
+				<Route path="/studentportal" element={<StudentPortalPage />} />
+				<Route path="/instructorportal" element={<InstructorPortalPage />} />
 
 				{/* Create Cv */}
 				<Route path="/createcv" element={<CreateCVPage />}>

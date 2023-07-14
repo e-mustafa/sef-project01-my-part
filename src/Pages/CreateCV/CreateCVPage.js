@@ -10,12 +10,12 @@ import CVTemplate from "../../Coponents/CreateCV/CVTemplate";
 import { formDataFiled, initialformData } from "../../Coponents/CreateCV/data";
 import { jsPDF } from "jspdf";
 
-function CreateCVPage() {
+function NewCreateCVPage() {
 	const [formData, setFormData] = useState(
 		sessionStorage.getItem("CVData")
 			? JSON.parse(sessionStorage.getItem("CVData"))
-			// : formDataFiled
-			: initialformData
+			: // : formDataFiled
+			  initialformData
 	);
 	// Surakarta, December 2, 1994
 
@@ -63,7 +63,6 @@ function CreateCVPage() {
 
 	// handel Change in Complex form -----------------------------------
 	function handelChangeComplex(e, i, type) {
-
 		const { value, name } = e.target;
 		let data = [...formData?.[type]];
 		data[i] = { ...data[i], [name]: value };
@@ -134,4 +133,4 @@ function CreateCVPage() {
 	);
 }
 
-export default React.memo(CreateCVPage);
+export default React.memo(NewCreateCVPage);

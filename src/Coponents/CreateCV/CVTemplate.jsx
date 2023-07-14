@@ -1,5 +1,8 @@
 import React from "react";
+import egyptFlagImg from "../../Images/Flag_of_Egypt.png";
+import seff_logoImg from "../../Images/seff_logo_black.jpg";
 import { websiteAvailableIcons } from "./data";
+import { FaFacebook } from "react-icons/fa6";
 
 function CVTemplate({ data }) {
 	const main_info = data.main_information;
@@ -94,7 +97,7 @@ function CVTemplate({ data }) {
 									{links &&
 										links?.map(
 											(ele, i) =>
-												ele !== "" && (
+												ele.sitename !== "" && (
 													<a
 														key={i}
 														href={ele.url}
@@ -192,6 +195,9 @@ function CVTemplate({ data }) {
 
 														<h6 className="fw-bold fs-12 text-black">
 															{`${ele?.position} | ${ele?.periodFrom} - ${ele?.periodTo}`}
+															{/* {ele.position || ""} | {ele.periodFrom || ""} -{" "}
+														{ele.periodTo || ""}
+														frontend developer | Nov 2019 - present */}
 														</h6>
 														<p className="fs-11 text-muted text-justify mb-1">
 															{ele?.description || ""}

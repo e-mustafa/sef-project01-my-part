@@ -23,10 +23,6 @@ export const websiteAvailableIcons = [
 
 const iniInputsCount = 3;
 
-// export const initialFormData = {
-// 	skills: Array(iniInputsCount).fill(""),
-// };
-
 export const initialformData = {
 	image: "",
 	main_information: {

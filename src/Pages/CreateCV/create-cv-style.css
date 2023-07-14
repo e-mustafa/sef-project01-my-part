@@ -3,7 +3,7 @@
 	--primary-light: #e7bc3c;
 	--primary-light-opacity: rgba(231, 188, 60, 0.5);
 	--Green: #34a853;
-	--Red: #ea4335;
+	/* --Red: #ea4335; */
 	--Grey: #9d9d9d;
 	--Grey-light: #d0d0d0;
 	--gray-dark: #3a3939;
@@ -355,7 +355,7 @@ a {
 	border: var(--border-width) solid var(--gray-dark);
 	outline: none;
 	color: var(--white);
-	padding: 10px 15px;
+	padding: 10px 15px !important;
 	background-color: var(--input-pg-color);
 }
 
@@ -398,10 +398,7 @@ a {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-
 }
-
-
 
 /* mobile number react-tel-input -------------------------- */
 .create-cv .react-tel-input .form-control {
@@ -410,7 +407,7 @@ a {
 	letter-spacing: 0.01rem;
 	margin-top: 0 !important;
 	margin-bottom: 0 !important;
-	padding-left: 60px;
+	padding-left: 60px !important;
 	margin-left: 0;
 	background: var(--input-pg-color);
 	border: var(--border-width) solid var(--gray-dark);

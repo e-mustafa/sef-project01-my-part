@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Sign-Up-container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(29, 29, 29, 0.9);
+}
+
+.sign-up-parent-box {
+  width: 75%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 40px;
+}
+
+.sign-up-child-box {
+  padding: 100px 10px 50px;
+  background-color: #171717d9;
+  border-radius: 8px;
+}
+
+.sign-up-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: -55px 37.5% 40px;
+  position: absolute;
+}
+
+.sign-up-first-name,
+.sign-up-last-name,
+.sign-up-email,
+.sign-up-password-confirmation,
+.sign-up-password {
+  background-color: #414040;
+  height: 50px;
+  width: 95% !important;
+  border-radius: 8px;
+  color: white;
+  margin-left: 15px;
+  padding-left: 40px !important;
+}
+
+.sign-up-first-name-box,
+.sign-up-last-name-box,
+.sign-up-email-box1,
+.sign-up-password-box,
+.sign-up-password-confirmation-box {
+  position: relative;
+}
+
+.sign-up-email {
+  width: 97.7% !important;
+}
+
+.sign-up-first-name-icon,
+.sign-up-last-name-icon,
+.sign-up-email-icon,
+.sign-up-password-confirmation-icon,
+.sign-up-password-icon {
+  width: 20px !important;
+  height: 30px;
+  position: absolute;
+  left: 12%;
+  top: 23%;
+  color: #bf9b30;
+  font-size: 17px;
+}
+
+.sign-up-email-icon {
+  left: 6%;
+  top: 25%;
+}
+
+.sign-up-password-confirmation-icon2,
+.sign-up-password-icon2 {
+  width: 20px !important;
+  height: 40px;
+  position: absolute;
+  left: 88%;
+  top: 28%;
+  z-index: 10;
+  color: #c7c7c73a;
+  font-size: 17px;
+}
+
+.sign-up-last-name::placeholder,
+.sign-up-first-name::placeholder,
+.sign-up-email::placeholder,
+.sign-up-password-confirmation::placeholder,
+.sign-up-password::placeholder {
+  padding-left: 12px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+
+.sign-up-button {
+  width: 180px !important;
+  height: 40px;
+  background-color: #bf9b30 !important;
+  color: white !important;
+  font-size: 14px !important;
+  margin-left: 38%;
+}
+
+.sign-up-already {
+  color: white;
+  margin-top: 20px;
+}
+
+.sign-up-login {
+  color: #bf9b30 !important;
+}
+
+.sign-up-already {
+  font-size: 19px;
+}
+
+.sign-up-login {
+  text-decoration: none;
+}
+
+@media (max-width: 912px) {
+  .sign-up-email {
+    width: 95.5% !important;
+  }
+
+  .sign-up-first-name-icon,
+  .sign-up-last-name-icon,
+  .sign-up-email-icon,
+  .sign-up-password-confirmation-icon,
+  .sign-up-password-icon {
+    left: 8%;
+    top: 23%;
+  }
+
+  .sign-up-password-icon2,
+  .sign-up-password-confirmation-icon2 {
+    font-size: 14px;
+  }
+  .sign-up-button {
+    width: 91% !important;
+    margin-left: 25px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .sign-up-password-icon2 {
+    font-size: 14px;
+  }
+
+  .sign-up-password-confirmation-icon2 {
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .sign-up-first-name-icon,
+    .sign-up-last-name-icon,
+    .sign-up-email-icon,
+    .sign-up-password-confirmation-icon,
+    .sign-up-password-icon {
+      left: 9%;
+      top: 25%;
+    }
+
+    .sign-up-password-confirmation-icon2,
+    .sign-up-password-icon2 {
+      left: 88%;
+      top: 28%;
+    }
+
+    .sign-up-last-name::placeholder,
+    .sign-up-first-name::placeholder,
+    .sign-up-email::placeholder,
+    .sign-up-password-confirmation::placeholder,
+    .sign-up-password::placeholder {
+      font-size: 13px;
+    }
+
+    .sign-up-first-name-icon,
+    .sign-up-last-name-icon,
+    .sign-up-email-icon,
+    .sign-up-password-confirmation-icon,
+    .sign-up-password-icon {
+      /* padding-top: 3px; */
+      font-size: 15px;
+    }
+
+    .sign-up-first-name,
+    .sign-up-last-name,
+    .sign-up-email,
+    .sign-up-password-confirmation,
+    .sign-up-password {
+      padding-left: 40px !important;
+    }
+
+    .sign-up-password-confirmation-icon2,
+    .sign-up-password-icon2 {
+      font-size: 14px;
+    }
+    .sign-up-button {
+      width: 91% !important;
+      margin-left: 25px;
+    }
+  }
+
+  @media (max-width: 567px) {
+    .sign-up-first-name-icon,
+    .sign-up-last-name-icon,
+    .sign-up-email-icon,
+    .sign-up-password-confirmation-icon,
+    .sign-up-password-icon {
+      left: 10%;
+      top: 26%;
+    }
+
+    .sign-up-password-confirmation-icon2,
+    .sign-up-password-icon2 {
+      left: 83%;
+      top: 28%;
+    }
+
+    .sign-up-child-box {
+      padding: 85px 10px 50px;
+      background-color: #171717d9;
+      border-radius: 8px;
+    }
+
+    .sign-up-first-name,
+    .sign-up-last-name,
+    .sign-up-email,
+    .sign-up-password-confirmation,
+    .sign-up-password {
+      width: 94% !important;
+      margin-left: 6px;
+    }
+
+    .sign-up-button {
+      width: 86% !important;
+      margin-left: 16px;
+    }
+    .sign-up-already {
+      font-size: 15.5px;
+    }
+
+    .sign-up-parent-box {
+      width: 97%;
+    }
+
+    .sign-up-password-confirmation-icon2,
+    .sign-up-password-icon2 {
+      font-size: 14px;
+    }
+
+    .sign-up-image {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: -51px 28.5% 12px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .sign-up-first-name-icon,
+    .sign-up-last-name-icon,
+    .sign-up-email-icon,
+    .sign-up-password-confirmation-icon,
+    .sign-up-password-icon {
+      font-size: 13px;
+      left: 12%;
+      top: 27%;
+    }
+
+    .sign-up-password-confirmation-icon2,
+    .sign-up-password-icon2 {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .sign-up-first-name-icon,
+    .sign-up-last-name-icon,
+    .sign-up-email-icon,
+    .sign-up-password-confirmation-icon,
+    .sign-up-password-icon {
+      left: 13%;
+      top: 30.5%;
+    }
+
+    .sign-up-last-name::placeholder,
+    .sign-up-first-name::placeholder,
+    .sign-up-email::placeholder,
+    .sign-up-password-confirmation::placeholder,
+    .sign-up-password::placeholder {
+      font-size: 11px;
+      padding-left: 2px;
+    }
+
+    .sign-up-image {
+      margin: -51px 23% 10px !important;
+    }
+
+    .sign-up-password-confirmation-icon2,
+    .sign-up-password-icon2 {
+      top: 30.5%;
+    }
+
+    .sign-up-button {
+      font-size: 12px !important;
+    }
+  }
+}
+
+/* ----------------------------------- */
+.signup-inputs .login_right-icon {
+  position: absolute;
+  top: 13px;
+  right: 30px;
+}
+
+.signup-inputs .pass-padding {
+  padding-right: 65px !important;
+}

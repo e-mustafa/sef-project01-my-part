@@ -27,17 +27,15 @@ function MainInformation1Form() {
 			});
 			const formattedDate = dateFormatter?.format(selectedDate);
 			return formattedDate;
-		} else {
-			return "";
-		}
+		}else{return ""}
 	}
 
 	useEffect(() => {
 		const inputdate = formData?.main_information?.date;
 		const formattedDate = formatDate(inputdate) && formatDate(inputdate);
 		let data = { ...formData?.main_information, birthDay: formattedDate };
-		setFormData({ ...formData, main_information: data || "" });
-	}, [formData?.main_information?.date]);
+		setFormData({ ...formData, main_information: (data||"") });
+	}, [formData?.main_information?.date, setFormData]);
 
 	return (
 		<form className="cv-form row g-3">

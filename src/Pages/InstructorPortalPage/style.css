@@ -1,0 +1,366 @@
+:root {
+  --Primary: #bf9b30;
+  --Green: #34a853;
+  --Red: #1a1919;
+  --Grey: #d0d0d0;
+  --Black: #000000;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url(../../Images/secondary_background.jpg) no-repeat fixed center;
+  background-size: cover;
+  position: relative;
+  color: var(--white);
+}
+
+.container11 {
+  padding-top: 120px;
+  width: 87%;
+  margin: auto;
+}
+
+.container22 {
+  width: 87%;
+  margin: auto;
+}
+
+/* .background-color1 {
+  background-color: #1a1919f1;
+} */
+
+.overlayOnImage1 {
+  position: absolute;
+  z-index: -5;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1a1919f1;
+}
+
+/* ///////////////////////////////////////    Sub Title      //////////////////////////////////////////// */
+
+.studentportal {
+  color: var(--Grey);
+}
+
+.studentportalline {
+  background-color: var(--Primary);
+  width: 80px;
+  height: 1px;
+  margin: -7px 0px 5px 2px;
+}
+
+/* ////////////////////////     Student Portal Title And View    //////////////////// */
+
+.welcom-back,
+.welcom-back1 {
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.welcom-back1 {
+  color: var(--Primary);
+}
+
+.btn-view-profile,
+.btn-view-profile:hover {
+  background-color: var(--Primary);
+  color: var(--white);
+  font-size: 17px !important;
+  text-transform: uppercase;
+  margin-top: 7px;
+}
+
+@media (max-width: 567px) {
+  .welcom-back,
+  .welcom-back1 {
+    font-size: 23px;
+  }
+
+  .btn-view-profile {
+    font-size: 14px !important;
+    margin-top: 20px;
+    width: 100px;
+    padding: 5px;
+  }
+}
+
+/* ///////////////////////////////////     Number Upcoming And Registered And Completed    //////////////////////////// */
+
+.Number-Upcoming-Registered-Completed {
+  width: 100% !important;
+  border-radius: 8px;
+  padding: 50px 0px 50px 10px;
+  background-color: var(--Black);
+  margin-left: 0px !important;
+}
+
+.Number-Upcoming-Registered h2 {
+  height: 80px;
+  font-size: 30px;
+  font-weight: 600;
+  border: 2px solid var(--Primary);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.Number-Upcoming-Registered p {
+  font-size: 20px;
+}
+
+/* //////////////////////////////   Level And ProgressBar    //////////////////////////////////////// */
+
+.LevelAndProgressBar h4 {
+  margin-bottom: 23px;
+  font-size: 25px;
+}
+
+.progress {
+  height: 11px;
+  padding: 0;
+}
+
+.progress-bar {
+  background-color: var(--Primary);
+}
+
+@media (max-width: 567px) {
+  .LevelAndProgressBar h4 {
+    margin-bottom: 13px;
+    font-size: 17px;
+  }
+}
+
+/* //////////////////////////////////      All Clear          //////////////////////////////// */
+
+.AllClear {
+  border-radius: 5px;
+  background-color: #b7b4b467;
+  padding: 30px 0px 30px 20px;
+  margin: 100px 0px;
+}
+
+.AllClear i {
+  font-size: 40px;
+}
+
+.AllClear h4 {
+  margin: -27px 0px 0px 55px;
+  font-size: 22px;
+}
+
+@media (max-width: 567px) {
+  .AllClear {
+    padding: 20px 0px 10px 10px !important;
+  }
+
+  .AllClear i {
+    font-size: 27px !important;
+  }
+
+  .AllClear h4 {
+    font-size: 15px;
+    margin: -28px 0px 0px 40px;
+  }
+}
+
+/* //////////////////////////////      Registered Courses     //////////////////////////// */
+
+.ongoing-Courses-introuduction-text {
+  border-radius: 8px;
+  padding: 20px 0px 10px 10px !important;
+  background-color: var(--Black);
+}
+
+.ongoing-Courses-title {
+  font-size: 33px;
+}
+
+.ongoing-Courses-introuduction-text h4 {
+  font-size: 23px;
+}
+
+.ongoing-Courses-lev1 {
+  font-size: 20px;
+}
+
+.ongoing-Courses-icon {
+  font-size: 16px !important;
+  color: var(--Primary);
+}
+
+.ongoing-Courses-20student {
+  font-size: 20px;
+}
+
+.ongoing-Courses-button {
+  background-color: var(--Primary);
+  color: var(--white);
+  font-size: 14px !important;
+  text-transform: uppercase;
+}
+
+@media (max-width: 567px) {
+  .ongoing-Courses-title {
+    font-size: 23px;
+  }
+
+  .ongoing-Courses-introuduction-text h4 {
+    font-size: 18px;
+  }
+  .ongoing-Courses-lev1 {
+    font-size: 14px;
+  }
+
+  .ongoing-Courses-20student {
+    font-size: 14px;
+  }
+
+  .ongoing-Courses-button {
+    font-size: 12px !important;
+    width: 100px;
+    padding: 3px;
+  }
+
+  .upcoming-courses-subtitle1,
+  .upcoming-courses-lev1 {
+    font-size: 15px;
+  }
+}
+
+/* ///////////////////////////////////    Upcoming  Exams /////////////////////// */
+
+.Upcoming-Exams-title {
+  font-size: 30px;
+}
+
+.Upcoming-Exams-button {
+  background-color: var(--Primary);
+  color: var(--white);
+  font-size: 12px !important;
+}
+.Upcoming-Exams-wed {
+  font-size: 15px;
+}
+
+.Upcoming-Exams-introuduction-text h4 {
+  font-size: 21px;
+}
+
+.Upcoming-Exams-introuduction-icon {
+  font-size: 16px !important;
+  margin-left: 15px;
+  color: var(--Primary);
+}
+
+.Upcoming-Exams-instructor-text,
+.Upcoming-Exams-instructor-subtext,
+.Upcoming-Exams-lev1Exam {
+  font-size: 17px;
+}
+
+.Upcoming-Exams-instructor-text {
+  color: var(--Primary);
+}
+
+.list-group-item {
+  background-color: var(--Primary) !important;
+  height: 30px !important;
+  border: none !important;
+}
+
+.list-group {
+  background-color: var(--Black);
+}
+
+@media (max-width: 567px) {
+  .Upcoming-Exams-title {
+    font-size: 23px;
+  }
+
+  .Upcoming-Exams-wed {
+    font-size: 12px;
+  }
+
+  .Upcoming-Exams-introuduction-text h4 {
+    font-size: 16px;
+  }
+
+  .Upcoming-Exams-instructor-text,
+  .Upcoming-Exams-instructor-subtext,
+  .Upcoming-Exams-lev1Exam {
+    font-size: 13px;
+  }
+
+  .lev1Exam {
+    font-size: 19px !important;
+  }
+
+  .Upcoming-Exams-button {
+    display: none;
+  }
+}
+
+/* /////////////////////////////////        Upcoming-Courses  //////////////////////////// */
+
+.Upcoming-Courses-title {
+  font-size: 33px;
+}
+.Upcoming-Courses-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.Upcoming-Courses {
+  border-radius: 8px;
+  margin-right: 2px !important;
+  background-color: var(--Black);
+}
+
+.Upcoming-Courses-text1 {
+  padding: 18px;
+}
+
+.upcoming-courses-title1 {
+  font-size: 23px;
+}
+
+.upcoming-courses-button {
+  background-color: var(--Primary);
+  color: var(--white);
+  font-size: 14px !important;
+  text-transform: uppercase;
+}
+
+.upcoming-courses-icon1 {
+  font-size: 16px;
+  color: var(--Primary);
+}
+
+@media (max-width: 567px) {
+  .Upcoming-Courses-image {
+    width: 90%;
+    margin: 15px 15px 0px !important;
+    height: 180px;
+    border-radius: 8px;
+  }
+  .upcoming-courses-title1 {
+    font-size: 19px;
+  }
+
+  .upcoming-courses-button {
+    font-size: 12px !important;
+    width: 100px;
+    padding: 3px;
+  }
+
+  .Upcoming-Courses-title {
+    font-size: 23px;
+  }
+}
