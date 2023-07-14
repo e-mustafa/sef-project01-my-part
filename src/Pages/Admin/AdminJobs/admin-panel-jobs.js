@@ -40,7 +40,12 @@ function AdminPanelJobs() {
 						{/* Job list cards in small screens ------------------------------------- */}
 						<React.Suspense
 							fallback={
-								<Skeleton className="sef-Skeleton mt-4" inline count={3} height={200} />
+								<Skeleton
+									className="sef-Skeleton d-block d-lg-none mt-4"
+									inline
+									count={3}
+									height={200}
+								/>
 							}
 						>
 							<JobListContainer />

@@ -14,12 +14,12 @@ function TopBarAdmin() {
 						adminSideBarData?.map((section, i) => (
 							<li className="" key={i} onClick={() => setActiveAdminLinkIndex(i)}>
 								<Link
-									to="#"
+									to={section?.link}
 									className={`admin-topbar-link ${
 										activeAdminLinkIndex === i ? "topbar-active" : ""
 									} `}
 								>
-									<h5 className=" fw-bold p-3">{section.title}</h5>
+									<h5 className=" fw-bold p-3">{section?.title}</h5>
 								</Link>
 							</li>
 						))}
@@ -32,14 +32,14 @@ function TopBarAdmin() {
 					data-bs-toggle="dropdown"
 					aria-expanded="false"
 				>
-					{adminSideBarData[activeAdminLinkIndex]?.content[activeAdminSubLinkIndex]}
+					{adminSideBarData[activeAdminLinkIndex]?.content[activeAdminSubLinkIndex]?.title}
 				</div>
 				<ul className="dropdown-menu w-100">
 					{adminSideBarData[activeAdminLinkIndex]?.content?.map((sublink, i) => (
 						<li key={i} onClick={() => setActiveAdminSubLinkIndex(i)}>
-							<a className="dropdown-item" href="#">
-								{sublink}
-							</a>
+							<Link className="dropdown-item" to={sublink?.link}>
+								{sublink?.title}
+							</Link>
 						</li>
 					))}
 				</ul>

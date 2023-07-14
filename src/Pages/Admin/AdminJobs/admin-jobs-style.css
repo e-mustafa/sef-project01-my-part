@@ -24,7 +24,6 @@
 	-webkit-background-clip: text;
 }
 
-
 /* -------------------------------admin jobs top sidebar ------------------------ */
 
 .admin-topbar-link.topbar-active {
@@ -106,4 +105,38 @@
 
 .admin-Joblist-pagination .page-item.disabled {
 	color: gray;
+}
+
+/* --------------------------- admin__sidebar ---------------------------------- */
+.admin__sidebar .admin__sidebar-links{
+	color: var(--white);
+}
+.admin__sidebar .admin__sidebar-links.admin-sidebar-active,
+.admin__sidebar .admin__sidebar-links:hover {
+	color: var(--primary);
+}
+
+.admin__sidebar .admin__sidebar-link {
+	transition: 0.3s ease-out;
+	-webkit-transition: 0.3s ease-out;
+	position: relative;
+	color: var(--white);
+}
+.admin__sidebar .admin__sidebar-link.admin-sidebar-active,
+.admin__sidebar .admin__sidebar-link:hover {
+	transform: translateX(15px);
+	-webkit-transform: translateX(15px);
+	color: var(--primary);
+}
+.admin__sidebar .admin__sidebar-link::before {
+	content: "\f101";
+	font-family: "Font Awesome 6 Free";
+	margin-right: 5px;
+	display: none;
+	transition: 0.3s ease-out;
+	-webkit-transition: 0.3s ease-out;
+}
+.admin__sidebar .admin__sidebar-link.admin-sidebar-active,
+.admin__sidebar .admin__sidebar-link:hover::before {
+	display: inline;
 }

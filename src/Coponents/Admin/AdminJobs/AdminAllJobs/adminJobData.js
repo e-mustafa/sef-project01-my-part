@@ -1,8 +1,40 @@
 export const adminSideBarData = [
-	{ title: "Users", content: ["Admins", "Editors", "Instructors", "Students"] },
-	{ title: "Articles", content: ["Published Articles", "Scheduled Articles", "Saved Drafts"] },
-	{ title: "Jobs", content: ["Published Jobs", "Saved Drafts"] },
-	{ title: "Courses", content: ["Published Courses", "Scheduled Courses", "Saved Drafts"] },
+	{
+		title: "Users",
+		link: "/adminalluser",
+		content: [
+			{ title: "Admins", link: "#" },
+			{ title: "Editors", link: "#" },
+			{ title: "Instructors", link: "#" },
+			{ title: "Students", link: "#" },
+		],
+	},
+	{
+		title: "Articles",
+		link: "/adminallarticle",
+		content: [
+			{ title: "Published Articles", link: "#" },
+			{ title: "Scheduled Articles", link: "#" },
+			{ title: "Saved Drafts", link: "#" },
+		],
+	},
+	{
+		title: "Jobs",
+		link: "/adminalljob",
+		content: [
+			{ title: "Published Jobs", link: "#" },
+			{ title: "Saved Drafts", link: "#" },
+		],
+	},
+	{
+		title: "Courses",
+		link: "adminallcourses",
+		content: [
+			{ title: "Published Courses", link: "#" },
+			{ title: "Scheduled Courses", link: "#" },
+			{ title: "Saved Drafts", link: "#" },
+		],
+	},
 ];
 
 export const adminJobsListData = [

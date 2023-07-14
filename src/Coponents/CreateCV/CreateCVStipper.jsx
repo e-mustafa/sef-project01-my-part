@@ -9,8 +9,6 @@ function CreateCVStipper({ data }) {
 	const [activePage, setActivePage] = useState(1);
 	const [swiperInstance, setSwiperInstance] = useState(null);
 
-	console.log("activePage ", activePage);
-	console.log("swiperInstance ", swiperInstance);
 
 	// handel change index in stepper depends location.pathname
 	const location = useLocation();
@@ -46,7 +44,7 @@ function CreateCVStipper({ data }) {
 								<div className="step d-flex gap-3 align-items-center">
 									<div
 										className={`step-button outline-indicator btn-indicator
-									${step.id <= activePage + 1 ? "active" : ""} `}
+									${step.id <= activePage + 1 ? "createcv-active" : ""} `}
 									>
 										{step.id}
 									</div>

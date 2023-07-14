@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { stepperData } from "./data";
 
-function BackAndContinueBtns() {
+function BackAndContinueBtns({ loading, createPDF }) {
 	const navigate = useNavigate();
 	const location = useLocation();
 
@@ -47,7 +47,12 @@ function BackAndContinueBtns() {
 					Continue
 				</button>
 			) : (
-				<button className="btn btn-primary btn-lg btn-width justify-self-end">Download</button>
+				<button
+					className="btn btn-primary btn-lg btn-width justify-self-end"
+					onClick={createPDF}
+				>
+					{loading ? "Processing" : "Download"}
+				</button>
 			)}
 		</div>
 	);

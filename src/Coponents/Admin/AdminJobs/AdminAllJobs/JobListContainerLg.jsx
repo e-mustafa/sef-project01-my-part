@@ -26,7 +26,7 @@ function JobListContainerLg() {
 			</div>
 
 			{/* Job list cards in lg screen ------------------------------------- */}
-			<React.Suspense fallback={<Skeleton className="sef-Skeleton" count={3} height={100} />}>
+			<React.Suspense fallback={<Skeleton className="sef-Skeleton d-none d-lg-block" count={3} height={100} />}>
 				<JobListCardsLg jobsState={jobsState} handelDeleteJob={handelDeleteJob} />
 			</React.Suspense>
 		</div>

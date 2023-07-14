@@ -1,18 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import egyptFlagImg from "../../Images/Flag_of_Egypt.png";
-// import CountryCodeInput from "./CountryCodeInput";
-// import PhoneInput from "react-phone-input-2";
-//import 'react-phone-input-2/lib/style.css';
+
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import DragDropImg from "./DragDropImg";
 import { useOutletContext } from "react-router-dom";
-// import PhoneInput from "./PhoneInput";
-// import PhoneInput2 from "./phoneInput2";
 
 function MainInformation1Form() {
-	const [formData, handelChange, handelChangeMobile] = useOutletContext();
+	const [formData, handelChange, , handelChangeMobile] = useOutletContext();
+	const setFormData = useOutletContext()[10];
 	const main_info = formData?.main_information;
+
+	// when upload image add it to main state --------------------------
+	const [imgUrl, setImgUrl] = useState("");
+	useEffect(() => {
+		setFormData((prev) => ({ ...prev, image: imgUrl }));
+	}, [imgUrl, setFormData]);
+
+	function formatDate(dateInput) {
+		if (dateInput) {
+			const selectedDate = new Date(dateInput);
+			const dateFormatter = new Intl.DateTimeFormat("en-US", {
+				year: "numeric",
+				month: "long",
+				day: "numeric",
+			});
+			const formattedDate = dateFormatter?.format(selectedDate);
+			return formattedDate;
+		} else {
+			return "";
+		}
+	}
+
+	useEffect(() => {
+		const inputdate = formData?.main_information?.date;
+		const formattedDate = formatDate(inputdate) && formatDate(inputdate);
+		let data = { ...formData?.main_information, birthDay: formattedDate };
+		setFormData({ ...formData, main_information: data || "" });
+	}, [formData?.main_information?.date]);
+
 	return (
-		
 		<form className="cv-form row g-3">
 			<div className="col-12 col-md-6">
 				<label htmlFor="inputFirstName" className="form-label">
@@ -38,7 +65,6 @@ function MainInformation1Form() {
 					id="inputLastName"
 					name="LastName"
 					value={main_info?.LastName ?? ""}
-					// onChange={handelChange}
 					onChange={(e) => handelChange(e, "main_information")}
 				/>
 			</div>
@@ -52,7 +78,6 @@ function MainInformation1Form() {
 					id="inputProfession"
 					name="profession"
 					value={main_info?.profession ?? ""}
-					// onChange={handelChange}
 					onChange={(e) => handelChange(e, "main_information")}
 				/>
 			</div>
@@ -66,7 +91,6 @@ function MainInformation1Form() {
 					id="inputCountry"
 					name="country"
 					value={main_info?.country ?? ""}
-					// onChange={handelChange}
 					onChange={(e) => handelChange(e, "main_information")}
 				/>
 			</div>
@@ -80,7 +104,6 @@ function MainInformation1Form() {
 					id="inputCity"
 					name="city"
 					value={main_info?.city ?? ""}
-					// onChange={handelChange}
 					onChange={(e) => handelChange(e, "main_information")}
 				/>
 			</div>
@@ -88,22 +111,45 @@ function MainInformation1Form() {
 				<label htmlFor="inputMobileNumber" className="form-label">
 					Mobile Number
 				</label>
-				<div className="mobile-data d-flex g-2 align-items-center">
-					<span>
-						<img src={egyptFlagImg} alt="Egypt Country Flag" className="rounded" width={30} />
-					</span>
-					<span className="px-3 fw-bold">+20</span>
-					<input
-						type="tel"
-						pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-						className="form-control "
-						id="inputMobileNumber"
-						name="mobileNumber"
-						value={main_info?.mobileNumber ?? ""}
-						// onChange={handelChange}
-						onChange={(e) => handelChange(e, "main_information")}
-					/>
-				</div>
+
+				<PhoneInput
+					country={"eg"}
+					placeholder="+20 123 123 1233"
+					name="mobileNumber"
+					value={main_info?.mobileNumber || ""}
+					onChange={handelChangeMobile}
+					// countryCodeEditable={false}
+					// disableAreaCodes={true}
+					autoFormat={true}
+				/>
+			</div>
+
+			<div className="col-12 col-md-6">
+				<label htmlFor="inputCity" className="form-label">
+					State
+				</label>
+				<input
+					type="text"
+					className="form-control"
+					id="inputCity"
+					name="state"
+					value={main_info?.state ?? ""}
+					onChange={(e) => handelChange(e, "main_information")}
+				/>
+			</div>
+
+			<div className="col-12 col-md-6">
+				<label htmlFor="inputCity" className="form-label">
+					Birthday
+				</label>
+				<input
+					type="date"
+					className="form-control custom-date-input"
+					id="inputDate"
+					name="date"
+					value={main_info?.date ?? ""}
+					onChange={(e) => handelChange(e, "main_information")}
+				/>
 			</div>
 
 			{/* ------------------ email ---------------------- */}
@@ -117,24 +163,13 @@ function MainInformation1Form() {
 					id="inputCVEmail"
 					name="email"
 					value={main_info?.email ?? ""}
-					// onChange={handelChange}
 					onChange={(e) => handelChange(e, "main_information")}
 				/>
 			</div>
 
-			{/* <div className="col-8">
-				<PhoneInput
-					country={"eg"}
-					name="mobileNumber"
-					inputProps={{ name: "mobileNumber" }}
-					value={main_info?.mobileNumber}
-					onChange={handelChangeMobile}
-					countryCodeEditable
-					// autoFormat={false}
-				/>
-			</div> */}
 			<div className="col-12">
-				<DragDropImg />
+				<h6 className="fw-bold text-capitalize my-4">Personal Photo</h6>
+				<DragDropImg setImgUrl={setImgUrl} />
 			</div>
 		</form>
 	);

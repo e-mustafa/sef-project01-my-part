@@ -1,6 +1,4 @@
 import React from "react";
-import egyptFlagImg from "../../Images/Flag_of_Egypt.png";
-import seff_logoImg from "../../Images/seff_logo_black.jpg";
 import { websiteAvailableIcons } from "./data";
 
 function CVTemplate({ data }) {
@@ -12,16 +10,16 @@ function CVTemplate({ data }) {
 	const honersAndAwards = data.honersAndAwards;
 	const hobbiesAndInterests = data.hobbiesAndInterests;
 	const links = data.links;
-	console.log(education);
+
 	return (
-		<div id="CVTemplate" className="ps-2 ">
+		<div className="ps-2 ">
 			<div className="overflow-auto">
-				<div className="row cv-part-1">
+				<div id="CV_Template" className="row cv-part-1">
 					<div className="col-4 px-3 py-5 bg_blue">
 						<div className="overflow-hidden h-100 d-flex flex-column gap-4 ps-2">
 							<div className="cv--avatar overflow-hidden">
 								<img
-									src={data.image || seff_logoImg}
+									src={data?.image}
 									alt={`${main_info?.firstName} ${main_info?.LastName}`}
 									className="cv--avatar-img rounded-circle"
 								/>
@@ -35,11 +33,13 @@ function CVTemplate({ data }) {
 							</div>
 							<div className="d-flex flex-column gap-2 ">
 								<div className="cv-squire-info">
-									<h6 className="fs-12">Surakarta, December 2, 1994</h6>
+									<h6 className="fs-12">
+										{`${main_info?.state || ""}, ${main_info?.birthDay || ""}`}
+									</h6>
 								</div>
 								<div className="cv-squire-info">
 									<h6 className="fs-12">
-										{main_info?.mobileNumber && `+20 ${main_info?.mobileNumber || ""}`}
+										{main_info?.mobileNumber && `+${main_info?.mobileNumber || ""}`}
 									</h6>
 								</div>
 								<div className="cv-squire-info">
@@ -140,24 +140,31 @@ function CVTemplate({ data }) {
 								<h4 className="fs-20 fw-bold text_blue cv-section-title">Education</h4>
 
 								<div className=" d-flex flex-column gap-3 ">
-									{education.map((ele, i) => (
-										<div key={i} className="education-item d-flex gap-2">
-											<p className="  w-100" style={{ flex: "1 0 24%" }}>
-												{ele.periodFrom || ""} - {ele.periodTo || ""}
-											</p>
-											<ul className="education-details">
-												<li className="cv-li-dot">
-													<h5 className="fs-6 ">{ele?.organizationName || ""}</h5>
-													<h6 className="fw-bold fs-12 text-black">
-														{ele?.degree || ""}
-													</h6>
-													<p className="fs-11 text-muted text-justify mb-1">
-														{ele?.description || ""}
+									{education &&
+										education.map((ele, i) => (
+											<div key={i} className="education-item d-flex gap-2">
+												{(ele.periodFrom || ele.periodTo) && (
+													<p className="  w-100" style={{ flex: "0 0 24%" }}>
+														{ele.periodFrom || ""} - {ele.periodTo || ""}
 													</p>
-												</li>
-											</ul>
-										</div>
-									))}
+												)}
+												{ele?.organizationName && (
+													<ul className="education-details">
+														<li className="cv-li-dot">
+															<h5 className="fs-6 ">
+																{ele?.organizationName || ""}
+															</h5>
+															<h6 className="fw-bold fs-12 text-black">
+																{ele?.degree || ""}
+															</h6>
+															<p className="fs-11 text-muted text-justify mb-1">
+																{ele?.description || ""}
+															</p>
+														</li>
+													</ul>
+												)}
+											</div>
+										))}
 								</div>
 							</div>
 
@@ -169,29 +176,29 @@ function CVTemplate({ data }) {
 									{experience?.map((ele, i) => (
 										<div key={i} className="education-item d-flex gap-2">
 											<div>
-												<img
-													src={ele.img || egyptFlagImg}
-													alt={ele.companyName || ""}
-													width="50px"
-													height="auto"
-												/>
+												{ele?.img && (
+													<img
+														src={ele?.img}
+														alt={ele.companyName || ""}
+														width="50px"
+														height="auto"
+													/>
+												)}
 											</div>
-											<ul className="education-details">
-												<li className="cv-li-dot">
-													<h5 className="fs-6 ">{ele.companyName || ""}</h5>
-													<h6 className="fw-bold fs-12 text-black">
-														{`${ele.position || ""} | ${ele.periodFrom || ""} - ${
-															ele.periodTo || ""
-														}`}
-														{/* {ele.position || ""} | {ele.periodFrom || ""} -{" "}
-														{ele.periodTo || ""}
-														frontend developer | Nov 2019 - present */}
-													</h6>
-													<p className="fs-11 text-muted text-justify mb-1">
-														{ele?.description || ""}
-													</p>
-												</li>
-											</ul>
+											{ele?.companyName && (
+												<ul className="education-details">
+													<li className="cv-li-dot">
+														<h5 className="fs-6 ">{ele.companyName || ""}</h5>
+
+														<h6 className="fw-bold fs-12 text-black">
+															{`${ele?.position} | ${ele?.periodFrom} - ${ele?.periodTo}`}
+														</h6>
+														<p className="fs-11 text-muted text-justify mb-1">
+															{ele?.description || ""}
+														</p>
+													</li>
+												</ul>
+											)}
 										</div>
 									))}
 								</div>

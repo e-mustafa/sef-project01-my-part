@@ -20,6 +20,8 @@ import Education5Form from "./Coponents/CreateCV/Education5Form";
 import Links8Form from "./Coponents/CreateCV/Links8Form";
 import MainInformation1Form from "./Coponents/CreateCV/MainInformation1Form";
 import HobbiesAndInterests7Form from "./Coponents/CreateCV/HobbiesAndInterests7Form";
+import ForgetPasswordPage from "./Pages/Auth/forget-password-page";
+import ResetPasswordPage from "./Pages/Auth/reset-password-page";
 
 
 
@@ -28,6 +30,8 @@ function App() {
 		<div className="App">
 			<Routes>
 				<Route path="/auth/login" element={<LoginPage />} />
+				<Route path="/auth/forget-password" element={<ForgetPasswordPage />} />
+				<Route path="/auth/reset-password" element={<ResetPasswordPage />} />
 
 				<Route path="/admin/jobs" element={<AdminPanelJobs />} />
 				<Route path="/admin/jobs/applications" element={<JobApplicationsListPage />} />
@@ -36,7 +40,7 @@ function App() {
 				<Route path="/createcv" element={<CreateCVPage />}>
 					{/* redirect to first route -------------------------------- */}
 					<Route index element={<Navigate replace to="/createcv/main-information" />} />
-					
+
 					<Route path="main-information" element={<MainInformation1Form />} />
 					<Route path="summary" element={<Summary2Form />} />
 					<Route path="skills" element={<Skills3Form />} />

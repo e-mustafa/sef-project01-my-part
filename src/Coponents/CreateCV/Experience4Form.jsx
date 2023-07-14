@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import DragDropImgSmall from "./DragDropImgSmall";
 import { AiOutlinePlusCircle } from "react-icons/ai";
@@ -9,6 +9,20 @@ function Experience4Form() {
 	const [formData, , , , , , , handelChangeComplex, deleteComplexItem, addComplexItem] =
 		useOutletContext();
 	const experience = formData?.experience;
+	const setFormData = useOutletContext()[10];
+
+
+	// when upload image add it to main state --------------------------
+	const [imgUrl, setImgUrl] = useState({});
+	useEffect(() => {
+		if (imgUrl.img ) {
+			let allData = formData?.experience;
+			allData = [...allData];
+			allData[imgUrl?.index] = { ...allData[imgUrl?.index], img: imgUrl?.img };
+			setFormData({ ...formData, experience: allData });
+		}
+	}, [imgUrl]);
+
 	return (
 		<>
 			<h5 className="mb-4 mb-lg-5">Experience</h5>
@@ -28,6 +42,7 @@ function Experience4Form() {
 									name="companyName"
 									value={ele?.companyName ?? ""}
 									onChange={(e) => handelChangeComplex(e, i, "experience")}
+									autoFocus
 								/>
 							</div>
 
@@ -75,7 +90,7 @@ function Experience4Form() {
 							<div className="col-12 ">
 								<div className="row g-3">
 									<div className="col-12 col-lg-4 order-last order-lg-0 h-100">
-										<DragDropImgSmall />
+										<DragDropImgSmall setImgUrl={setImgUrl} index={i} />
 									</div>
 
 									<div className="col-12 col-lg-8 h-100">
@@ -89,7 +104,6 @@ function Experience4Form() {
 											rows="5"
 											value={ele?.description ?? ""}
 											onChange={(e) => handelChangeComplex(e, i, "experience")}
-											autoFocus
 										></textarea>
 									</div>
 								</div>

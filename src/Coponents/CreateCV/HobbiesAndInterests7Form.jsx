@@ -39,6 +39,7 @@ function HobbiesAndInterests7Form() {
 											name="skills"
 											value={ele ?? ""}
 											onChange={(e) => handelChangeSkills(e, i, "hobbiesAndInterests")}
+											autoFocus
 										/>
 									</div>
 									<div

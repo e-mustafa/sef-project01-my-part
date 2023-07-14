@@ -7,8 +7,7 @@ function Education5Form() {
 	const [formData, , , , , , , handelChangeComplex, deleteComplexItem, addComplexItem] =
 		useOutletContext();
 	const education = formData?.education;
-	console.log(useOutletContext());
-	console.log(education);
+
 	return (
 		<>
 			<h5 className="mb-4 mb-lg-5">Education</h5>
@@ -30,6 +29,7 @@ function Education5Form() {
 									name="organizationName"
 									value={ele?.organizationName ?? ""}
 									onChange={(e) => handelChangeComplex(e, i, "education")}
+									autoFocus
 								/>
 							</div>
 
@@ -86,7 +86,6 @@ function Education5Form() {
 									rows="5"
 									value={ele?.description ?? ""}
 									onChange={(e) => handelChangeComplex(e, i, "education")}
-									autoFocus
 								></textarea>
 							</div>
 						</div>

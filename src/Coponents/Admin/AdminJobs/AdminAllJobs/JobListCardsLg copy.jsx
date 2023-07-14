@@ -1,6 +1,5 @@
 import React from "react";
 import { LiaTrashAlt } from "react-icons/lia";
-import { Link } from "react-router-dom";
 
 function JobListCardsLg({ jobsState, handelDeleteJob }) {
 	return (
@@ -32,11 +31,9 @@ function JobListCardsLg({ jobsState, handelDeleteJob }) {
 							<h6>{job?.applications}</h6>
 						</div>
 						<div className="col-6 col-lg-1 px-2 d-flex align-items-center justify-content-between gap-2 text_primary">
-							<Link // to={`/...${job?.id}`}
-								to="#" className="clickable active-scale"
-							>
+							<div className="clickable active-scale">
 								<i className="fa-regular fa-pen-to-square fa-xl" />
-							</Link>
+							</div>
 
 							<div className="clickable active-scale" onClick={() => handelDeleteJob(i)}>
 								{/* <i className="fa-solid fa-trash-can fa-xl" /> */}

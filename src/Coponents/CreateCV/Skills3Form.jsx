@@ -38,6 +38,7 @@ function Skills3Form() {
 											name="skills"
 											value={ele ?? ""}
 											onChange={(e) => handelChangeSkills(e, i, "skills")}
+											autoFocus
 										/>
 									</div>
 									<div

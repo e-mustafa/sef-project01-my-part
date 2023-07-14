@@ -30,6 +30,7 @@ function Links8Form() {
 										name="sitename"
 										value={ele.sitename ?? ""}
 										onChange={(e) => handelChangeComplex(e, i, "links")}
+										autoFocus
 									/>
 								</div>
 								<div className="col-12 col-lg-8 ">

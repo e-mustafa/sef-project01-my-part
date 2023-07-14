@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./create-cv-style.css";
 import { Outlet } from "react-router-dom";
 
@@ -6,17 +6,21 @@ import HeaderTitle from "../../Coponents/Global/HeaderTitle";
 import CreateCVStipper from "../../Coponents/CreateCV/CreateCVStipper";
 import BackAndContinueBtns from "../../Coponents/CreateCV/BackAndContinueBtns";
 import CustomizeYourCv from "../../Coponents/CreateCV/CustomizeYourCv";
-import { formDataFiled } from "../../Coponents/CreateCV/data";
 import CVTemplate from "../../Coponents/CreateCV/CVTemplate";
+import { formDataFiled, initialformData } from "../../Coponents/CreateCV/data";
+import { jsPDF } from "jspdf";
 
 function CreateCVPage() {
-	const [formData, setFormData] = useState(formDataFiled);
+	const [formData, setFormData] = useState(
+		sessionStorage.getItem("CVData")
+			? JSON.parse(sessionStorage.getItem("CVData"))
+			// : formDataFiled
+			: initialformData
+	);
 	// Surakarta, December 2, 1994
 
 	function handelChange(e, type) {
-		console.log("links e ", e);
 		const { value, name } = e.target;
-		console.log(value, name);
 		let data = formData?.[type];
 		data = { ...data, [name]: value };
 		setFormData((prev) => ({ ...prev, [type]: data }));
@@ -27,22 +31,15 @@ function CreateCVPage() {
 		setFormData((prev) => ({ ...prev, [name]: value }));
 	}
 
-	function handelChangeMobile(value, e) {
-		// const areaCode = e.dialCode;
-		// let number = value;
-		// let inputPhoneNumber = inputPhoneNumber.replace(/\D/g, "");
-		let fullNumber = `+${value}`;
-		setFormData({ ...formData, mobileNumber: fullNumber });
+	function handelChangeMobile(value, s) {
+		let data = formData?.main_information;
+		data = { ...data, mobileNumber: value };
+		setFormData({ ...formData, main_information: data });
 	}
 
 	//  handel Change in array form -----------------------------------------------
 	function handelChangeSkills(e, i, type) {
-		console.log("skills i ", i);
-		console.log("skills e ", e);
 		const { value } = e.target;
-		console.log("skills value ", value);
-		console.log(formData.skills[i]);
-
 		const values = [...formData?.[type]];
 		values[i] = value;
 		setFormData((prev) => ({
@@ -52,9 +49,7 @@ function CreateCVPage() {
 	}
 
 	function deleteSkill(i, type) {
-		console.log("i ", i);
 		let newArray = formData.skills?.filter((_, index) => index !== i);
-		console.log(newArray);
 		formData?.[type].splice(i, 1);
 		setFormData((prev) => ({ ...prev, [type]: [...formData?.[type]] }));
 	}
@@ -68,17 +63,14 @@ function CreateCVPage() {
 
 	// handel Change in Complex form -----------------------------------
 	function handelChangeComplex(e, i, type) {
-		console.log(type + " e ", e);
-		console.log(type + " i ", i);
+
 		const { value, name } = e.target;
 		let data = [...formData?.[type]];
 		data[i] = { ...data[i], [name]: value };
 		setFormData((prev) => ({ ...prev, [type]: data }));
 	}
 	function deleteComplexItem(i, type) {
-		console.log("i ", i);
 		let newArray = formData?.[type]?.filter((_, index) => index !== i);
-		console.log(newArray);
 		formData?.[type].splice(i, 1);
 		setFormData((prev) => ({ ...prev, [type]: [...formData?.[type]] }));
 	}
@@ -89,6 +81,22 @@ function CreateCVPage() {
 			[type]: [...formData?.[type], ""],
 		}));
 	}
+
+	useEffect(() => {
+		// copy formData object to session storage
+		sessionStorage.setItem("CVData", JSON.stringify({ ...formData }));
+	}, [formData]);
+
+	// -------------------------- process and download cv logic ----------------------------
+	const [loading, setLoading] = useState(false);
+	const createPDF = () => {
+		setLoading(true);
+		const page = new jsPDF("portrait", "px", [660, 1041.3]);
+		page.html(document.querySelector("#CV_Template")).then(() => {
+			page.save("my-CV.pdf");
+		});
+		setLoading(false);
+	};
 
 	return (
 		<div style={{ backgroundColor: "rgb(26 26 26 / .9)", color: "#fff" }}>
@@ -111,6 +119,7 @@ function CreateCVPage() {
 								handelChangeComplex,
 								deleteComplexItem,
 								addComplexItem,
+								setFormData,
 							]}
 						/>
 					</div>
@@ -119,10 +128,10 @@ function CreateCVPage() {
 						<CVTemplate data={formData} />
 					</div>
 				</div>
-				<BackAndContinueBtns />
+				<BackAndContinueBtns loading={loading} createPDF={createPDF} />
 			</section>
 		</div>
 	);
 }
 
-export default CreateCVPage;
+export default React.memo(CreateCVPage);

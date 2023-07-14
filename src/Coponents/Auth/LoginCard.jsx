@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 
 import logoImg from "../../Images/seff_logo_black.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 
 function LoginCard() {
+	const navigate = useNavigate();
 	const useridRef = useRef(null);
 	const passwordRef = useRef(null);
 	const [showPassword, setShowPassword] = useState(false);
@@ -14,33 +15,139 @@ function LoginCard() {
 		password: "",
 	});
 
+	const [isValid, setIsValid] = useState({});
 	const [submitTitl, setSubmitTitl] = useState("Login");
 	const [disableLogin, setDisableLogin] = useState(false);
+	const [messages, setMessages] = useState("");
 
 	const handleInput = (event) => {
-		const { name, value } = event.target;
 		setFormInput((prevFormInput) => ({
 			...prevFormInput,
-			[name]: value,
+			userid: event.target?.value,
 		}));
+
+		checkUserIdValidate(event.target?.value);
+	};
+
+	const handleInputPass = (event) => {
+		setFormInput((prevFormInput) => ({
+			...prevFormInput,
+			password: event.target?.value,
+		}));
+
+		checkPassValidate(event.target?.value);
 	};
 
 	const handelShowPassword = () => {
 		setShowPassword((prev) => !prev);
 	};
 
+	const checkUserIdValidate = (word) => {
+		if (word === "") {
+			setIsValid((prev) => {
+				return {
+					...prev,
+					userid: {
+						invalid: "is-invalid",
+						message: "User ID cannot be empty",
+					},
+				};
+			});
+			return false;
+		} else if (word !== "" && word?.length >= 3) {
+			setIsValid((prev) => {
+				return {
+					...prev,
+					userid: {
+						invalid: "is-valid",
+						message: "",
+					},
+				};
+			});
+			return true;
+		} else {
+			setIsValid((prev) => {
+				return {
+					...prev,
+					userid: {
+						invalid: "is-invalid",
+						message: "User ID should be at least 3 characters long",
+					},
+				};
+			});
+			return false;
+		}
+	};
+
+	const checkPassValidate = (word) => {
+		if (word !== "" && word?.length >= 3) {
+			setIsValid((prev) => {
+				return {
+					...prev,
+					password: {
+						invalid: "is-valid",
+						message: "",
+					},
+				};
+			});
+			return true;
+		} else if (word === "" || word?.length < 3) {
+			setIsValid((prev) => {
+				return {
+					...prev,
+					password: {
+						invalid: "is-invalid",
+						message: "Password should be at least 3 characters long",
+					},
+				};
+			});
+			return false;
+		} else {
+			setIsValid((prev) => {
+				return {
+					...prev,
+					password: {
+						invalid: "is-invalid",
+						message: "Password Cannot be empty",
+					},
+				};
+			});
+			return false;
+		}
+	};
+
 	const handleSubmit = async (e, actions) => {
 		e.preventDefault();
 
-		setSubmitTitl("sending...");
-		setDisableLogin(true);
+		const checkUserid = checkUserIdValidate(formInput?.userid);
+		const checkPass = checkPassValidate(formInput?.password);
 
-		await new Promise((resolve) =>
-			setTimeout(() => {
-				setSubmitTitl("Login");
-				setDisableLogin(false);
-			}, 1000)
-		);
+		if (checkUserid && checkPass) {
+			setSubmitTitl("sending...");
+			setDisableLogin(true);
+
+			// try {
+			// 	const response = await axios.post("http://...", formInput);
+			// 	setMessages("You login successfully, You will redirect now...");
+			// 	navigate(-1);
+			// 	console.log( response.data);
+			// } catch (error) {
+			// 	console.error("Something went wrong!, Please try agin later", error);
+			// 	setMessages("Something went wrong!, Please try agin later");
+			// }
+
+			await new Promise((resolve) =>
+				setTimeout(() => {
+					setSubmitTitl("send");
+					setDisableLogin(false);
+					setMessages("You login successfully, You will redirect now...");
+					navigate(-1);
+				}, 1000)
+			);
+		} else {
+			checkUserIdValidate(formInput?.userid);
+			checkPassValidate(formInput?.password);
+		}
 	};
 
 	return (
@@ -56,12 +163,13 @@ function LoginCard() {
 					onSubmit={handleSubmit}
 					className=" d-flex flex-column gap-3 mb-5"
 				>
+					{messages && <p className="text-secondary mb-0">{messages}</p>}
 					<div className="d-flex flex-column text-danger"> </div>
 
 					<div className="login-inputs rounded">
 						<i className="login_left-icon fa-regular fa-user fa-lg text_primary" />
 						<input
-							className={`form-control ps-5`}
+							className={`form-control ps-5 ${isValid?.userid?.invalid}`}
 							autoFocus
 							type="text"
 							id="S_username"
@@ -79,16 +187,16 @@ function LoginCard() {
 						<input
 							id="S_password"
 							autoComplete=""
-							className="form-control px-5"
+							className={`form-control px-5 ${isValid?.password?.invalid}`}
 							placeholder="PASSWORD"
 							name="password"
 							type={showPassword ? "text" : "password"}
 							value={formInput?.password}
-							onChange={handleInput}
+							onChange={handleInputPass}
 							ref={passwordRef}
 						/>
 						<div
-							className="login_right-icon text-white-50 clickable"
+							className="login_right-icon text-white-50 clickable me-4"
 							onClick={handelShowPassword}
 						>
 							{showPassword ? <FaRegEyeSlash size={22} /> : <FaRegEye size={22} />}
@@ -96,9 +204,9 @@ function LoginCard() {
 					</div>
 
 					<h6 className=" fw-bold text-end pe-3">
-						<a className="text-secondary shadow" href="#">
+						<Link className="text-secondary shadow" to="/auth/forget-password">
 							Forget your password ?
-						</a>
+						</Link>
 					</h6>
 
 					<button
@@ -112,7 +220,7 @@ function LoginCard() {
 			</div>
 			<h6 className="mt-4 ps-3">
 				Don't have an account yet?{" "}
-				<Link className="shadow text_primary fw-bold" to="/singup">
+				<Link className="shadow text_primary fw-bold" to="/auth/signup">
 					Sign up
 				</Link>
 			</h6>
@@ -120,4 +228,4 @@ function LoginCard() {
 	);
 }
 
-export default LoginCard;
+export default React.memo(LoginCard);

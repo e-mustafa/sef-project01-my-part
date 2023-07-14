@@ -25,6 +25,7 @@ function HonersAndAwards6Form() {
 									name="awardName"
 									value={ele?.awardName ?? ""}
 									onChange={(e) => handelChangeComplex(e, i, "honersAndAwards")}
+									autoFocus
 								/>
 							</div>
 
@@ -53,7 +54,6 @@ function HonersAndAwards6Form() {
 									rows="2"
 									value={ele?.description ?? ""}
 									onChange={(e) => handelChangeComplex(e, i, "honersAndAwards")}
-									autoFocus
 								></textarea>
 							</div>
 						</div>

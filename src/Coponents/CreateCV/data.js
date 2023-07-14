@@ -9,16 +9,6 @@ export const stepperData = [
 	{ id: 8, link: "links", title: "Links" },
 ];
 
-// export const websiteAvailableIconObject = [
-// 	{ name: "linkedin", icon: "fa-linkedin" },
-// 	{ name: "github", icon: "fa-github" },
-// 	{ name: "facebook", icon: "fa-facebook" },
-// 	{ name: "twitter", icon: "fa-twitter" },
-// 	{ name: "instagram", icon: "fa-instagram" },
-// 	{ name: "youtube", icon: "fa-youtube" },
-// 	{ name: "whatsapp", icon: "fa-whatsapp" },
-// 	{ name: "telegram", icon: "fa-telegram" },
-// ];
 
 export const websiteAvailableIcons = [
 	"linkedin",
@@ -33,11 +23,11 @@ export const websiteAvailableIcons = [
 
 const iniInputsCount = 3;
 
-export const initialFormData = {
-	skills: Array(iniInputsCount).fill(""),
-};
+// export const initialFormData = {
+// 	skills: Array(iniInputsCount).fill(""),
+// };
 
-export const InitialformData = {
+export const initialformData = {
 	image: "",
 	main_information: {
 		firstName: "",
@@ -47,9 +37,12 @@ export const InitialformData = {
 		country: "",
 		mobileNumber: "",
 		email: "",
+		date: "",
+		birthDay: "",
+		state: "",
 	},
 	about: "",
-	skills: [Array(iniInputsCount).fill("")],
+	skills: Array(iniInputsCount).fill(""),
 	experience: [
 		{
 			companyName: "",
@@ -76,19 +69,19 @@ export const InitialformData = {
 			description: "",
 		},
 	],
-	hobbiesAndInterests: [Array(iniInputsCount).fill("")],
-	links: [Array(iniInputsCount).fill({ sitename: "", url: "" })],
+	hobbiesAndInterests: Array(iniInputsCount).fill(""),
+	links: Array(iniInputsCount).fill({ sitename: "", url: "" }),
 };
 
 export const formDataFiled = {
-	image:"",
+	image: "",
 	main_information: {
 		firstName: "Hani",
 		LastName: "Husamuddin",
 		profession: "Frontend Developer",
 		city: "Cairo",
 		country: "Egypt",
-		mobileNumber: "2948503402",
+		mobileNumber: "201112223334",
 		email: "hani.husam@gmail.com",
 	},
 	about: "I have a background in information technology, with a focus on frontend development and UI design. I am the type of person who seizes every opportunity to learn something new. That is why I enjoy challenges. From there, I'm under pressure to learn quickly and gain a lot of new experience.",
