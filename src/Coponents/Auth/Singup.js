@@ -188,7 +188,7 @@ function Singup() {
 				<p className=" sign-up-already">
 					{" "}
 					Already have an account?{" "}
-					<Link to={`/login`} className="sign-up-login">
+					<Link to={`/auth/login`} className="sign-up-login">
 						login
 					</Link>
 				</p>
