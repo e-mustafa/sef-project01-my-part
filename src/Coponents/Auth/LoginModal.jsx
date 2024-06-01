@@ -38,7 +38,7 @@ function LoginModal() {
 							<div className="modal-body d-flex flex-column flex-sm-row justify-content-between gap-3 mb-4 mx-4">
 								<h6>Please! Logoin to view this page</h6>
 								<Link
-									to="/login"
+									to="/auth/login"
 									data-bs-dismiss="modal"
 									className="btn btn-primary text-uppercase px-5"
 								>
