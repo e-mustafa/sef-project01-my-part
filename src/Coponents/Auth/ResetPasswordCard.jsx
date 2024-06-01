@@ -219,7 +219,7 @@ function ForgetPasswordCard() {
 					</button>
 
 					<h6 className=" text-center fw-bold pe-3">
-						<Link className=" hover_primary shadow" to="/login">
+						<Link className=" hover_primary shadow" to="/auth/login">
 							<i className="fa-solid fa-angle-left" /> Back to Login
 						</Link>
 					</h6>
@@ -227,7 +227,7 @@ function ForgetPasswordCard() {
 			</div>
 			<h6 className="mt-4 ps-3">
 				Don't have an account yet?{" "}
-				<Link className="shadow text_primary fw-bold" to="/singup">
+				<Link className="shadow text_primary fw-bold" to="/auth/singup">
 					Sign up
 				</Link>
 			</h6>
