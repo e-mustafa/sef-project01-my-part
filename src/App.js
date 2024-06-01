@@ -30,10 +30,10 @@ function App() {
 	return (
 		<div className="App">
 			<Routes>
+				<Route path="/auth/signup" element={<RegisterPage />} />
 				<Route path="/auth/login" element={<LoginPage />} />
 				<Route path="/auth/forget-password" element={<ForgetPasswordPage />} />
 				<Route path="/auth/reset-password" element={<ResetPasswordPage />} />
-				<Route path="/auth/singup" element={<RegisterPage />} />
 
 				<Route path="/admin/jobs" element={<AdminPanelJobs />} />
 				<Route path="/admin/jobs/applications" element={<JobApplicationsListPage />} />
